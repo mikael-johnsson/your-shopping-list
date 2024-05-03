@@ -17,3 +17,19 @@ class List(models.Model):
     
     def __str__(self):
         return f"Name of list: {self.name}"
+
+class ListItem(models.Model):
+    item_id = models.IntegerField()
+    list = models.ForeignKey(
+        List, on_delete=models.CASCADE, related_name="list_item"
+    )
+    content = models.CharField(max_length=35)
+    author = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="item_author"
+    )
+    checked = models.BooleanField(default=False)
+    created_on = models.DateTimeField(auto_now_add=True)
+    updated_on = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["created_on"]
