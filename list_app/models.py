@@ -10,6 +10,7 @@ class List(models.Model):
         User, on_delete=models.CASCADE, related_name="lists"
     )
     created_on = models.DateTimeField(auto_now_add=True)
+    updated_on = models.DateTimeField(auto_now=True)
 
     class Meta:
         ordering = ["-created_on"]
