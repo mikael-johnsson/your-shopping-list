@@ -5,4 +5,5 @@ from .models import List, ListItem
 
 # Create your views here.
 class UsersLists(generic.ListView):
-    model = List
+    queryset = List.objects.all()
+    template_name = "list_list.html"
