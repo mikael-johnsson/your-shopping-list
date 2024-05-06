@@ -6,9 +6,9 @@ from .models import List, ListItem
 # Create your views here.
 class UsersLists(generic.ListView):
     queryset = List.objects.all()
-    template_name = "list_app/list_list.html"
+    template_name = "list_app/list_list.html" #create a list_list function inside?
 
-class ListItems(generic.ListView):
+class ListItems(generic.ListView): #is this really needed?
     queryset = ListItem.objects.all()
     template_name = "list_app/list_detail.html"
 

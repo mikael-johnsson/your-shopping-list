@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 class List(models.Model):
     name = models.CharField(max_length=25)
     author = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name="lists"
+        User, on_delete=models.CASCADE, related_name="list_author"
     )
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
