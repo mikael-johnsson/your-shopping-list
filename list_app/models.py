@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 
 class List(models.Model):
     #list_id = models.IntegerField()
-    name = models.CharField(max_length=25, unique=True)
+    name = models.CharField(max_length=25, unique=True) #should or should not be unique?
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="lists"
     )

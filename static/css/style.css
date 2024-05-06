@@ -3,3 +3,8 @@ nav {
     text-transform: capitalize;
     font-size: x-large;
 }
+
+.card {
+    
+    width: 60%;
+}
