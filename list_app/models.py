@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 class List(models.Model):
-    #list_id = models.IntegerField()
+    #list_id = models.IntegerField(default=1) #list_id should be a PK and it should be auto generated
     name = models.CharField(max_length=25, unique=True) #should or should not be unique?
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="lists"
