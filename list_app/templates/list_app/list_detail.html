@@ -2,7 +2,7 @@
 
 {% block content%}
 <div class="container">
-    <a href="{% url 'home'%}">Go back button</a>
+    <a href="{% url 'home' %}">Go back button</a>
     <h3>{{ list.name }}</h3>
     <p>{{ list.created_on }}</p>
     <div class="list-container">
@@ -13,6 +13,10 @@
                 <span>{{ item.content }}</span>
             </li>
             {% endfor %}
+            <li>
+                <input type="text"> <!--does this needs to be a form?-->
+                <button>Add item</button>
+            </li>
         </ul>
     </div>
     <button>SAVE</button>
