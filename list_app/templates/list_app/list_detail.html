@@ -1,5 +1,22 @@
 {% extends "base.html" %}
 
 {% block content%}
-Det här är list item sidan
+<div class="container">
+    <a href="{% url 'home'%}">Go back button</a>
+    <h3>{{ list.name }}</h3>
+    <p>{{ list.created_on }}</p>
+    <div class="list-container">
+        <ul>
+            {% for item in items %}
+            <li>
+                <input type="checkbox" {% if item.checked == True %} checked {% endif %}>
+                <span>{{ item.content }}</span>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <button>SAVE</button>
+    <button>SHARE</button>
+    <i> delete symbol</i>
+</div>
 {% endblock%}
