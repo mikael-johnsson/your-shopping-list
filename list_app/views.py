@@ -8,19 +8,21 @@ class UsersLists(generic.ListView):
     queryset = List.objects.all()
     template_name = "list_app/list_list.html" #create a list_list function inside?
 
-class ListItems(generic.ListView): #is this really needed?
-    queryset = ListItem.objects.all()
-    template_name = "list_app/list_detail.html"
+
+#is this really needed?
+#class ListItems(generic.ListView): 
+    # queryset = ListItem.objects.all()
+    # template_name = "list_app/list_detail.html"
 
 
-def list_detail(request, name):
+def list_detail(request, id):
     """
     Display and individual :model:`list_app.List`
     """
     #more of docstring...
 
     queryset = List.objects.all()
-    list = get_object_or_404(queryset, name=name)
+    list = get_object_or_404(queryset, id=id)
     items = ListItem.objects.all()
     
 

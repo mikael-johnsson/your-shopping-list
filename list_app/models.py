@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 class List(models.Model):
     name = models.CharField(max_length=25)
     author = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name="list_author"
+        User, on_delete=models.CASCADE, related_name="lists"
     )
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
@@ -20,7 +20,7 @@ class List(models.Model):
 class ListItem(models.Model):
     item_id = models.IntegerField()
     list = models.ForeignKey(
-        List, on_delete=models.CASCADE, related_name="list_item"
+        List, on_delete=models.CASCADE, related_name="list_items"
     )
     content = models.CharField(max_length=35)
     author = models.ForeignKey(
@@ -32,3 +32,6 @@ class ListItem(models.Model):
 
     class Meta:
         ordering = ["created_on"]
+    
+    def __str__(self):
+        return f"Item: {self.content}"
