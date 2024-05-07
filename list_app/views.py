@@ -23,7 +23,7 @@ def list_detail(request, id):
 
     queryset = List.objects.all()
     list = get_object_or_404(queryset, id=id)
-    items = ListItem.objects.all()
+    items = ListItem.objects.all().filter(list=list.id)
     
 
     return render(
