@@ -9,15 +9,15 @@ from django.urls import reverse
 #     queryset = List.objects.all()
 #     template_name = "list_app/list_list.html" 
 
-def index(request):
+# def index(request):
 
-    return render(
-        request,
-        "list_app/index.html"
-        )
+#     return render(
+#         request,
+#         "list_app/index.html"
+#         )
 
 def list_list(request):
-    queryset = List.objects.all()
+    queryset = List.objects.all()#adding filter author==request.user breaks the logout
     lists = queryset
     
     return render(
