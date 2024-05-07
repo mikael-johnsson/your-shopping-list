@@ -5,10 +5,26 @@ from django.urls import reverse
 
 
 # Create your views here.
-class UsersLists(generic.ListView):
-    queryset = List.objects.all()
-    template_name = "list_app/list_list.html" #create a list_list function inside?
+# class UsersLists(generic.ListView):
+#     queryset = List.objects.all()
+#     template_name = "list_app/list_list.html" 
 
+def index(request):
+
+    return render(
+        request,
+        "list_app/index.html"
+        )
+
+def list_list(request):
+    queryset = List.objects.all()
+    lists = queryset
+    
+    return render(
+        request,
+        "list_app/list_list.html",
+        {"lists": lists,}
+        )
 
 #is this really needed?
 #class ListItems(generic.ListView): 

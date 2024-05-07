@@ -16,3 +16,10 @@ nav {
 .list-container {
     border: 2px solid black;
 }
+
+.background-image-div {
+    height: 100vh;
+    background-image: url('/static/images/grocery_store.jpg');
+    background-size: cover;
+    background-color: antiquewhite;
+}

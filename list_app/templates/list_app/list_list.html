@@ -1,16 +1,22 @@
 {% extends "base.html" %}
+{% load static %}
 {% block content %}
 
 <!-- list_list.html content starts here -->
-
+{% if user.is_authenticated %}
 <div class="container">
     <h3>Users's lists</h3>
-    {% for list in list_list %} <!--list_list comes from the generic listview in Views.py. Make the entire container a link in javascript-->
+    {% for list in lists %} <!--list_list comes from the generic listview in Views.py. Make the entire container a link in javascript-->
     <div class="card mx-auto p-2 lol">
         <a href="{% url 'list_detail' list.id %}" class="card-title">{{ list.name }}</a>
     </div>
     {% endfor %}
 </div>
+{% else %}
+
+<p>THIS IS START INFO</p>
+
+{% endif %}
 
 <!-- list_list.html content ends here -->
 {% endblock %}
