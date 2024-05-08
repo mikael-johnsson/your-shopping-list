@@ -4,11 +4,11 @@
 {% block content%}
 <div class="container" id="top-container">
     <div class="row centered">
-        <h3 class="col-8">{{ list.name }}</h3>
+        <h3 class="col-6 list-heading">{{ list.name }}</h3>
         <a href="{% url 'home' %}" class="col-4">Go back button</a>
     </div>
     <div class="row centered">
-        <p>{{ list.created_on }}</p>
+        <p>Created: {{ list.created_on }}</p>
     </div>
     <div class="row centered">
         <div class="list-container">

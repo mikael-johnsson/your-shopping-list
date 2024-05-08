@@ -4,7 +4,7 @@
 
 <!-- list_list.html content starts here -->
 {% if user.is_authenticated %}
-<h3>{{user}}'s lists</h3>
+<h3 id="username-heading">{{user}}'s lists</h3>
 
 {% for list in lists %}
     <a href="{% url 'list_detail' list.id %}">
