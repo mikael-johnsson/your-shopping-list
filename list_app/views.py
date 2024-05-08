@@ -51,6 +51,21 @@ def list_detail(request, id):
         "items": items}
     )
 
+# create list here with default values, and edit values in different func when in list_detail
+# def create_list(user):
+#     """
+#     """
+
+#     list = List()
+#     list.save()
+
+#     return render(
+#         request,
+#         "list_app/list_detail.html",
+#         {"list": list}
+#     )
+
+
 def list_delete(request, id):
     """
     view to delete list
