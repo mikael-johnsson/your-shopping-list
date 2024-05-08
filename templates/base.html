@@ -24,25 +24,23 @@
     <title>Your Shopping List</title>
 </head>
 <body>
-    <nav class="navbar">
+    <nav class="navbar navbar-expand{-sm|-md|-lg|-xl|-xxl}">
         <h1>Your Shopping List</h1>
-        <ul class="navbar-nav me-auto">
+        <div class="link-container">
             {% if user.is_authenticated %}
-            <li class="nav-item">
+            
                 <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"
                     href="{% url 'account_logout' %}">Logout</a>
-            </li>
+               
             {% else %}
-            <li class="nav-item">
+           
                 <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"
                     href="{% url 'account_signup' %}">Sign Up</a>
-            </li>
-            <li class="nav-item">
                 <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page"
                     href="{% url 'account_login' %}">Login</a>
-            </li>
+            
             {% endif %}
-        </ul>
+        </div>
     </nav>
 
     {% block content %}

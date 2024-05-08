@@ -7,11 +7,15 @@ h3 {
 a {
     text-decoration: none;
     text-transform: uppercase;
+    color: black;
+    font-size: large;
 }
 
 /* Nav bar*/
-nav {
+.navbar {
     background-color: rgb(45, 175, 214);
+    justify-content: space-between;
+    padding: 20px;
 }
 
 nav h1 {
@@ -19,8 +23,8 @@ nav h1 {
     font-size: x-large;
 }
 
-.nav-item {
-    text-align: end;
+.link-container {
+    display: flex;
 }
 
 /* List of lists page*/
@@ -32,7 +36,6 @@ nav h1 {
     font-size: large;
     text-align: center;
     vertical-align: middle;
-    padding: auto;
     border: 3px solid black;
 }
 
