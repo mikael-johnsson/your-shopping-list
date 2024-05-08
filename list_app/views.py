@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.views import generic
 from .models import List, ListItem
 from django.urls import reverse
+from django.http import HttpResponseRedirect
 
 
 # Create your views here.
@@ -54,16 +55,12 @@ def list_delete(request, id):
     """
     view to delete list
     """
-
+    
     queryset = List.objects.all()
-    list = get_object_or_404(queryset, id=id)
-    list.delete() #why doesn it delete?
-    #add message to confirm deletion
-
-    # return render(
-    #     request,
-    #     "list_app/list_detail.html",
-    #     {"list": list} )
-
-    return HttpResponseRedirect(reverse('list_list'))
+    list = queryset.filter(id=id)
+    
+    list.delete()
+    #add modul to confirm deletion
+  
+    return HttpResponseRedirect(reverse('home'))
    
