@@ -1,7 +1,19 @@
 nav {
-    background-color: rgb(233, 210, 181);
-    text-transform: capitalize;
+    background-color: rgb(45, 175, 214);
+}
+
+nav h1 {
+    text-transform: uppercase;
     font-size: x-large;
+}
+
+a {
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.nav-item {
+    text-align: end;
 }
 
 .card {
