@@ -1,3 +1,15 @@
+/* General*/
+h3 {
+    text-align: center;
+    margin: 15px 0;
+}
+
+a {
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+/* Nav bar*/
 nav {
     background-color: rgb(45, 175, 214);
 }
@@ -7,25 +19,20 @@ nav h1 {
     font-size: x-large;
 }
 
-a {
-    text-decoration: none;
-    text-transform: uppercase;
-}
-
 .nav-item {
     text-align: end;
 }
 
+/* List of lists page*/
+
 .card {
-    
-    width: 60%;
-}
-
-.lol {
+    min-width: 50%;
+    width: 65%;
+    min-height: 80px;
+    font-size: large;
+    text-align: center;
+    vertical-align: middle;
+    padding: auto;
     border: 3px solid black;
-}
-
-.list-container {
-    border: 2px solid black;
 }
 
