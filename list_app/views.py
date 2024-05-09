@@ -6,6 +6,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.db.models import Max
 
 
+
 # Create your views here.
 # class UsersLists(generic.ListView):
 #     queryset = List.objects.all()
@@ -85,6 +86,7 @@ def edit_list(request, user):
     maxid = user.aggregate(Max('id'))
     list = user.get(id=maxid["id__max"])
     items = ListItem.objects.all().filter(list=list.id)
+    list.name = request.POST.get('new-list')
 
     if request.method == "POST":
         print("nu är det post")
