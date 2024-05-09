@@ -11,8 +11,8 @@ if (deleteListButton){
 })
 }
 
-const newListModal = document.getElementsByClassName("modalOkay")
-if (newListModal) {
-    newListModal.modal('show');
+const newListModal = document.getElementsByClassName("modalShow")
+if(newListModal){
+    document.getElementById("new-list-modal").show();
 }
 
