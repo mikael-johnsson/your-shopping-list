@@ -18,14 +18,22 @@ from django.http import HttpResponseRedirect
 #         )
 
 def list_list(request):
-    queryset = List.objects.all()#adding filter author==request.user breaks the logout
-    lists = queryset
-    
-    return render(
-        request,
-        "list_app/list_list.html",
-        {"lists": lists,}
-        )
+    if(request.user.is_authenticated):
+        queryset = List.objects.filter(author = request.user)
+        lists = queryset
+        
+        return render(
+            request,
+            "list_app/list_list.html",
+            {"lists": lists,}
+            )
+    else:
+        #add message
+        print("You are not logged in and can not see the lists")
+        return render(
+            request,
+            "list_app/list_list.html",
+            )
 
 #is this really needed?
 #class ListItems(generic.ListView): 
