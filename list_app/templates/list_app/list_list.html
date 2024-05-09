@@ -27,8 +27,8 @@
 {% endif %}
 
   <!-- Create new list Modal -->
-    
-  <div class="modal fade {% if modalOkay %} modalShow {% endif %}" id="new-list-modal" tabindex="-1" aria-labelledby="new-list-modal" aria-hidden="true">
+  {% if modalOkay %}
+  <div class="modal fade" id="new-list-modal" tabindex="-1" aria-labelledby="new-list-modal" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -46,6 +46,7 @@
       </div>
     </div>
   </div>
+  {% endif %}
 
 <!-- list_list.html content ends here -->
 {% endblock %}

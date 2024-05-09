@@ -12,9 +12,9 @@ if (deleteListButton){
 })
 }
 
-const newListModal = document.getElementsByClassName("modalShow")
+const newListModal = document.getElementById("new-list-modal")
 if(newListModal){
-    const modal = new bootstrap.Modal(document.getElementById("new-list-modal"));
+    const modal = new bootstrap.Modal(newListModal);
     modal.show();
     
 }

@@ -3,6 +3,7 @@ from django.views import generic
 from .models import List, ListItem
 from django.urls import reverse
 from django.http import HttpResponse, HttpResponseRedirect
+from django.db.models import Max
 
 
 # Create your views here.
@@ -78,33 +79,35 @@ def create_list(request, user):
             "modalOkay": modalOkay}
             )
 
-def edit_list(request):
+def edit_list(request, user):
     
     user = List.objects.filter(author=request.user)
-    list = user.filter(name="New Shopping List") #change to filter on perhaps largest id
-    list.name = request.POST
-    print(request.POST)
-    list.save()
-
+    maxid = user.aggregate(Max('id'))
+    list = user.get(id=maxid["id__max"])
+    items = ListItem.objects.all().filter(list=list.id)
+    
     return render(
         request,
         "list_app/list_detail.html",
-        {"list": list}
+        {"list": list,
+        "items": items}
     )
-
-
-
 
 def list_delete(request, id):
     """
     view to delete list
     """
-    
-    queryset = List.objects.all()
+    queryset = List.objects.filter(author = request.user)
+    lists = queryset
     list = queryset.filter(id=id)
     
     list.delete()
     #add modul to confirm deletion
   
-    return HttpResponseRedirect(reverse('home'))
+    return render(
+        request,
+        "list_app/list_list.html",
+        {"list": list,
+        "lists": lists}
+    )
    
