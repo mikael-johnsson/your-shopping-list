@@ -1,4 +1,5 @@
 //Delete list toast
+console.log('script.js loaded')
 
 const deleteListButton = document.getElementById('delete-list-button')
 const deleteListToast = document.getElementById('deleteListToast')
@@ -13,6 +14,8 @@ if (deleteListButton){
 
 const newListModal = document.getElementsByClassName("modalShow")
 if(newListModal){
-    document.getElementById("new-list-modal").show();
+    const modal = new bootstrap.Modal(document.getElementById("new-list-modal"));
+    modal.show();
+    
 }
 
