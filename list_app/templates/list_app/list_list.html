@@ -14,16 +14,37 @@
     </a>
 
 {% endfor %}
-<a class="card mx-auto p-2" href="">
+<a class="card mx-auto p-2" href="{% url 'create_list' user %}">
     <div>
         CREATE NEW LIST +
     </div>
 </a>
+<!-- for div above type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#new-list-modal" -->
 {% else %}
 
 <p>THIS IS START INFO</p>
-
 {% endif %}
+
+  <!-- Create new list Modal -->
+
+  <div class="modal fade {% if modalOkay %} modalOkay {% endif %}" id="new-list-modal" tabindex="-1" aria-labelledby="new-list-modal" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Create new list</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form action="{% url 'edit_list' user %}">
+            <label for="new-list">New list name</label>
+            <input type="text" name="new-list" id="new-list">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Save new list</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 
 <!-- list_list.html content ends here -->
 {% endblock %}

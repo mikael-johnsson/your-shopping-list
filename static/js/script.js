@@ -10,3 +10,9 @@ if (deleteListButton){
     toastBootstrap.show()
 })
 }
+
+const newListModal = document.getElementsByClassName("modalOkay")
+if (newListModal) {
+    newListModal.modal('show');
+}
+

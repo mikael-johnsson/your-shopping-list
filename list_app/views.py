@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.views import generic
 from .models import List, ListItem
 from django.urls import reverse
-from django.http import HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect
 
 
 # Create your views here.
@@ -30,10 +30,7 @@ def list_list(request):
     else:
         #add message
         print("You are not logged in and can not see the lists")
-        return render(
-            request,
-            "list_app/list_list.html",
-            )
+        return HttpResponseRedirect(reverse('home'))
 
 #is this really needed?
 #class ListItems(generic.ListView): 
@@ -60,18 +57,42 @@ def list_detail(request, id):
     )
 
 # create list here with default values, and edit values in different func when in list_detail
-# def create_list(user):
-#     """
-#     """
+def create_list(request, user):
+    """
+    """
 
-#     list = List()
-#     list.save()
+    list = List()
+    list.author = request.user
+    list.save()
+    modalOkay = True
 
-#     return render(
-#         request,
-#         "list_app/list_detail.html",
-#         {"list": list}
-#     )
+    if(request.user.is_authenticated):
+        queryset = List.objects.filter(author = request.user)
+        lists = queryset
+    
+    return render(
+            request,
+            "list_app/list_list.html",
+            {"list": list,
+            "lists": lists,
+            "modalOkay": modalOkay}
+            )
+
+def edit_list(request):
+    
+    user = List.objects.filter(author=request.user)
+    list = user.filter(name="New Shopping List") #change to filter on perhaps largest id
+    list.name = request.POST
+    print(request.POST)
+    list.save()
+
+    return render(
+        request,
+        "list_app/list_detail.html",
+        {"list": list}
+    )
+
+
 
 
 def list_delete(request, id):
