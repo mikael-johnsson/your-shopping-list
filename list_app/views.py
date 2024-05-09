@@ -85,6 +85,11 @@ def edit_list(request, user):
     maxid = user.aggregate(Max('id'))
     list = user.get(id=maxid["id__max"])
     items = ListItem.objects.all().filter(list=list.id)
+
+    if request.method == "POST":
+        print("nu är det post")
+    elif request.method == "GET":
+        print("nu är det get")
     
     return render(
         request,
