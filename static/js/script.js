@@ -29,3 +29,18 @@ if(newListModal){
     
 }
 
+// Edit item
+const item = document.getElementsByClassName("list_items")
+const editButtons = document.getElementsByClassName("item-edit-button")
+const updateForms = document.getElementsByClassName("item-edit-form")
+
+function editItem(event) {
+    event.target.style.display = "none";
+    
+}
+
+if(editButtons) {
+    for (let button of editButtons){
+    button.addEventListener("click", editItem)
+    }
+}

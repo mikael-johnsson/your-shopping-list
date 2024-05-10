@@ -89,3 +89,7 @@ nav h1 {
     text-align: left;
 }
 
+.item-edit-form {
+    display: none;
+}
+
