@@ -30,12 +30,30 @@
     <div class="row button-row">
         <button class="btn btn-primary">SAVE</button>
         <button class="btn btn-primary">SHARE</button>
-        <a class="btn btn-primary" id="delete-list-button" href="{% url 'list_delete' list.id %}">DELETE LIST</a>
-        
+        <button class="btn btn-primary" id="delete-list-button">DELETE LIST</button>
     </div>
 </div>
 
-<!--Delete confirmation toast-->
+  <!--Delete list confirmation modal-->
+  <div class="modal fade" id="delete-confirmation-modal" tabindex="-1" aria-labelledby="delete-confirmation-modal" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="deleteListLabel">Are you sure you want to delete the list?</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <form action="{% url 'list_delete' list.id %}" method="POST">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-primary">Delete list</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!--Delete list confirmation toast-->
 <div class="toast-container position-fixed bottom-0 end-0 p-3">
     <div id="deleteListToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
       <span class="toast-body">

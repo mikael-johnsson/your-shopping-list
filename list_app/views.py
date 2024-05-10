@@ -114,8 +114,11 @@ def list_delete(request, id):
     lists = queryset
     list = queryset.filter(id=id)
     
-    list.delete()
-    #add modul to confirm deletion
+    if request.method == "POST":
+        list.delete()
+    else:
+        print("The method isnt post :(")
+    
   
     return render(
         request,
