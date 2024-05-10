@@ -2,7 +2,6 @@
 
 const deleteListButton = document.getElementById('delete-list-button')
 const deleteListToast = document.getElementById('deleteListToast')
-console.log(deleteListButton)
 
 if (deleteListButton){
     const toastBootstrap = bootstrap.Toast.getOrCreateInstance(deleteListToast)
@@ -17,7 +16,9 @@ function showDeleteListModal(){
     const modal = new bootstrap.Modal(deleteConfirmationModal);
     modal.show();
 }
-deleteListButton.addEventListener("click", showDeleteListModal)
+if(deleteListButton){ //if statement to avoid error in console of non existing variable
+    deleteListButton.addEventListener("click", showDeleteListModal)
+}
     
 
 // Give new list a name modal
