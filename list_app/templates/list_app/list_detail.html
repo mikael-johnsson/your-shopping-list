@@ -21,9 +21,9 @@
                     <button type="submit" class="item-edit-button">Edit item</button>
                   </div>
                   <div class="item-edit-form">
-                    <form action="" method="POST">
+                    <form action="{% url 'edit_item' item.id %}" method="POST">
                       {% csrf_token %}
-                      <input type="text" name="edit-item">
+                      <input type="text" name="edit-item" id="edit-item" required>
                       <button type="submit">Update item</button>
                     </form>
                   </div>
@@ -36,7 +36,7 @@
                 <li>
                   <form action="{% url 'create_item' list.id %}" method="POST">
                     {% csrf_token %}
-                    <input type="text" name="new-item">
+                    <input type="text" name="new-item" required>
                     <button type="submit">Add item</button>
                   </form>
                 </li>

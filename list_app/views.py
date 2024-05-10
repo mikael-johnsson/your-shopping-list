@@ -160,9 +160,22 @@ def edit_item(request, id):
     View to edit item when button clicked 
     """
     item = ListItem.objects.all().get(id=id)
+    
+    if request.method == "POST":
+        item.content = request.POST.get("edit-item")
+        item.save()
+    else:
+        print("No post request in edit_item ")
+
     list = item.list
     items = ListItem.objects.all().filter(list=list)
 
+    return render(
+        request,
+        "list_app/list_detail.html",
+        {"list": list,
+        "items": items,}
+    )
 
 def delete_item(request, id):
     """
