@@ -30,12 +30,21 @@ if(newListModal){
 }
 
 // Edit item
-const item = document.getElementsByClassName("list_items")
 const editButtons = document.getElementsByClassName("item-edit-button")
 const updateForms = document.getElementsByClassName("item-edit-form")
+for (let form of updateForms){
+    form.style.display = "none"
+}
 
 function editItem(event) {
-    event.target.style.display = "none";
+    let parentDiv = event.target.parentElement
+    parentDiv.style.display = "none";
+    for (let form of updateForms){
+        if(form.previousElementSibling.children[2] == event.target){
+            form.style.display = "block";
+        }
+    }
+    
     
 }
 
