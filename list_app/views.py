@@ -154,3 +154,24 @@ def create_item(request, id):
         {"list": list,
         "items": items,}
     )
+
+def delete_item(request, id):
+    """
+    View to delete item when button clicked
+    """
+    item = ListItem.objects.all().get(id=id)
+    list = item.list
+    items = ListItem.objects.all().filter(list=list)
+    
+
+    if request.method == "POST":
+        item.delete()
+    else:
+        print("The method isnt post :(")
+    
+    return render(
+        request,
+        "list_app/list_detail.html",
+        {"list": list,
+        "items": items,}
+    )
