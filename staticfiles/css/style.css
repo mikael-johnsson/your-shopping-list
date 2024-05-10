@@ -1,0 +1,90 @@
+/* General*/
+.username-heading {
+    text-align: center;
+    margin: 15px 0;
+}
+
+a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: black;
+    font-size: medium;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+/* Nav bar*/
+.navbar {
+    background-color: rgb(45, 175, 214);
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    padding: 20px;
+}
+
+nav h1 {
+    text-transform: uppercase;
+    font-size: 18px;
+    text-align: center;
+}
+
+.link-container {
+    display: flex;
+}
+
+.nav-item {
+    margin: 5px;
+}
+
+/* List of lists page*/
+
+#username-heading {
+    text-align: center;
+    margin: 15px 0;
+}
+.card {
+    min-width: 50%;
+    width: 65%;
+    min-height: 80px;
+    font-size: large;
+    text-align: center;
+    vertical-align: middle;
+    border: 3px solid black;
+}
+
+/* List detail page*/
+
+.button-row {
+    justify-content: space-evenly;
+    gap: 10px;
+}
+
+.btn {
+    width: 80px;
+    font-size: large;
+  
+}
+
+.list-container {
+    border: 2px solid black;
+    text-align: left;
+    padding: 20px;
+}
+
+.list-container ul {
+    list-style-type: none;
+}
+
+.row {
+    margin: 10px;
+}
+
+#top-container {
+    max-width: 450px;
+    text-align: left;
+}
