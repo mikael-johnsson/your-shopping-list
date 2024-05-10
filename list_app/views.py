@@ -126,4 +126,31 @@ def list_delete(request, id):
         {"list": list,
         "lists": lists}
     )
-   
+
+
+def create_item(request, id):
+    """
+    View to create item when add item button clicked
+    """
+    queryset = List.objects.filter(author = request.user)
+    lists = queryset
+    list = queryset.get(id=id)
+
+    items = ListItem.objects.all().filter(list=id)
+
+    if request.method == "POST":
+        item = ListItem()
+        item.author = request.user
+        item.list = list
+        item.item_id = "1" #remove when deleted from model
+        item.content = request.POST.get("new-item")
+        item.save()
+    else:
+        print("nu blev det inte post i create_item")
+
+    return render(
+        request,
+        "list_app/list_detail.html",
+        {"list": list,
+        "items": items,}
+    )

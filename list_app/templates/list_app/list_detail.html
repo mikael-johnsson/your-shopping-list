@@ -21,8 +21,11 @@
                 </li>
                 {% endfor %}
                 <li>
-                    <input type="text"> <!--does this needs to be a form?-->
-                    <button>Add item</button>
+                  <form action="{% url 'create_item' list.id %}" method="POST">
+                    {% csrf_token %}
+                    <input type="text" name="new-item">
+                    <button type="submit">Add item</button>
+                  </form>
                 </li>
             </ul>
         </div>
