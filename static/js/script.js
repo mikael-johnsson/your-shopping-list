@@ -44,12 +44,26 @@ function editItem(event) {
             form.style.display = "block";
         }
     }
-    
-    
+
 }
 
 if(editButtons) {
     for (let button of editButtons){
     button.addEventListener("click", editItem)
     }
+}
+
+//Edit list name
+const editNameButton = document.getElementById("item-edit-button")
+const editNameForm = document.getElementById("list-name-form")
+editNameForm.style.display = "none";
+
+function editListName() {
+    editNameButton.style.display = "none";
+    editNameForm.style.display = "block";
+
+}
+
+if(editNameButton) {
+    editNameButton.addEventListener("click", editListName)
 }

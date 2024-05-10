@@ -94,7 +94,7 @@ def edit_list(request, user):
 
     if request.method == "POST":
         print("nu är det post")
-        list.name = request.POST.get('new-list')
+        list.name = request.POST.get('new-list-name')
         list.save()
     elif request.method == "GET":
         print("nu är det get")
@@ -160,7 +160,7 @@ def edit_item(request, id):
     View to edit item when button clicked 
     """
     item = ListItem.objects.all().get(id=id)
-    
+
     if request.method == "POST":
         item.content = request.POST.get("edit-item")
         item.save()

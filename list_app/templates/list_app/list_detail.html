@@ -5,6 +5,14 @@
 <div class="container" id="top-container">
     <div class="row centered">
         <h3 class="col-6 list-heading">{{ list.name }}</h3>
+        <button type="submit" id="item-edit-button">Edit list name</button>
+        <div id="list-name-form">
+          <form action="{% url 'edit_list' user %}" method="POST">
+            {% csrf_token %}
+            <input type="text" name="new-list-name" id="new-list-name" required>
+            <button type="submit">Update list name</button>
+          </form>
+        </div>
         <a href="{% url 'home' %}" class="col-4">Go back button</a>
     </div>
     <div class="row centered">
@@ -44,7 +52,6 @@
         </div>
     </div>
     <div class="row button-row">
-        <button class="btn btn-primary">SAVE</button>
         <button class="btn btn-primary">SHARE</button>
         <button class="btn btn-primary" id="delete-list-button">DELETE LIST</button>
     </div>

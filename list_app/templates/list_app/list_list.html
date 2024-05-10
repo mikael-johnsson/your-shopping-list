@@ -38,8 +38,8 @@
         <div class="modal-body">
           <form action="{% url 'edit_list' user %}" method="POST" id="ListName">
             {% csrf_token %}
-            <label for="new-list">Add a list name</label>
-            <input type="text" name="new-list" required>
+            <label for="new-list-name">Add a list name</label>
+            <input type="text" name="new-list-name" required>
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             <button type="submit" class="btn btn-primary">Save new list</button>
           </form>
