@@ -32,7 +32,11 @@ def list_list(request):
     else:
         #add message
         print("You are not logged in and can not see the lists")
-        return HttpResponseRedirect(reverse('home'))
+        return render(
+            request,
+            "list_app/list_list.html",
+            )
+    
 
 #is this really needed?
 #class ListItems(generic.ListView): 
@@ -86,10 +90,12 @@ def edit_list(request, user):
     maxid = user.aggregate(Max('id'))
     list = user.get(id=maxid["id__max"])
     items = ListItem.objects.all().filter(list=list.id)
-    list.name = request.POST.get('new-list')
+    
 
     if request.method == "POST":
         print("nu är det post")
+        list.name = request.POST.get('new-list')
+        list.save()
     elif request.method == "GET":
         print("nu är det get")
     
