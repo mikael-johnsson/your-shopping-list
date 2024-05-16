@@ -85,7 +85,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="{% url XXXX %}" method="POST">
+        <form action="{% url 'list_detail' list.id %}" method="POST">
             {% csrf_token %}
             <label for="sender-name">Your name:</label>
             <input type="text" name="sender-name">
