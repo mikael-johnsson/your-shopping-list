@@ -7,11 +7,11 @@
 <h3 id="username-heading">{{user}}'s lists</h3>
 
 {% for list in lists %}
-    <a href="{% url 'list_detail' list.id %}">
-        <div class="card mx-auto p-2 card-title">
-            {{ list.name }}
-        </div>
-    </a>
+  <a href="{% url 'list_detail' list.id %}">
+      <div class="card mx-auto p-2 card-title">
+          {{ list.name }}
+      </div>
+  </a>
 
 {% endfor %}
 <a class="card mx-auto p-2" href="{% url 'create_list' user %}">
@@ -20,10 +20,16 @@
     </div>
 </a>
 
-<!-- for div above type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#new-list-modal" -->
+<!-- Landing page content for not logged in user -->
 {% else %}
-
-<p>THIS IS START INFO</p>
+<div id="landing-page-body">
+  <div id="landing-page-container">
+    <h3>Time to go shopping soon?</h3>
+    <p>...then you have come to the right place! At <em>Your Shopping List</em> you can create lists for each grocery store run
+      and use the checkbox to keep track of what you have already bought. <br><br>Not in the mood for shopping? <br><br>Send the list
+      to a partner or friend! I am sure they can do it!</p>
+  </div>
+</div>
 {% endif %}
 
   <!-- Create new list Modal -->
