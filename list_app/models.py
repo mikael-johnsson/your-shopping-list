@@ -18,7 +18,6 @@ class List(models.Model):
         return f"Name of list: {self.name}"
 
 class ListItem(models.Model):
-    item_id = models.IntegerField()
     list = models.ForeignKey(
         List, on_delete=models.CASCADE, related_name="list_items"
     )
@@ -28,7 +27,6 @@ class ListItem(models.Model):
     )
     checked = models.BooleanField(default=False)
     created_on = models.DateTimeField(auto_now_add=True)
-    updated_on = models.DateTimeField(auto_now=True)
 
     class Meta:
         ordering = ["created_on"]
