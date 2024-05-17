@@ -30,6 +30,33 @@ function shareListModal(){
 if(shareListButton){ //if statement to avoid error in console of non existing variable
     shareListButton.addEventListener("click", shareListModal)
 }
+
+// Share list function (not giving value from listName and listItems)
+function sendMail(shareList) {
+    let listName = document.getElementById("listName")
+    let listItemElements = document.getElementsByClassName("listItems")
+    let listItemValues = []
+    for (let element of listItemElements){
+        let value = element.textContent
+        listItemValues.push(value)
+    }
+    
+    emailjs.send("service_s8rbn75","template_zvdv8q9", {
+        "from_name" : shareList.senderName.value,
+        "to_email": shareList.emailInput.value,
+        "list_name": listName.textContent,
+        "list_items": listItemValues
+    })
+    .then(
+        function(response) {
+            console.log("success", response);
+        },
+        function(error) {
+            console.log("fail", error);
+        }
+    );
+    
+}
     
 
 // Give new list a name modal
