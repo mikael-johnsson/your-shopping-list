@@ -120,10 +120,11 @@ nav h1 {
     gap: 10px;
 }
 
-/*.btn {
-    width: 80px;
+.btn {
+    width: 105px;
     font-size: large;
-}*/
+    margin: 8px;
+}
 
 .list-container {
     border: 2px solid black;
