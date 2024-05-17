@@ -92,7 +92,7 @@ if(editButtons) {
 }
 
 //Edit list name
-const editNameButton = document.getElementById("item-edit-button")
+const editNameButton = document.getElementById("name-edit-button")
 const editNameForm = document.getElementById("list-name-form")
 editNameForm.style.display = "none";
 

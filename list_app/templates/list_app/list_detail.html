@@ -6,15 +6,15 @@
     <!-- List name -->
     <div class="row centered">
         <h3 class="col-6 list-heading" id="listName">{{ list.name }}</h3>
-        <button type="submit" id="item-edit-button">Edit list name</button>
-        <div id="list-name-form">
+        <button type="submit" class="col-4 btn btn-primary" id="name-edit-button">EDIT</button>
+        <div id="list-name-form" class="col-4">
           <form action="{% url 'edit_list' user %}" method="POST">
             {% csrf_token %}
-            <input type="text" name="new-list-name" id="new-list-name" required>
-            <button type="submit">Update list name</button>
+            <input type="text" name="new-list-name" id="new-list-name" required><br>
+            <button type="submit" id="name-update-button">UPDATE</button>
           </form>
         </div>
-        <a href="{% url 'home' %}" class="col-4">Go back button</a>
+        <a href="{% url 'home' %}" class="col-2" id="go-back-link"><i class="fa-solid fa-rotate-left" id="go-back-button"></i></a>
     </div>
     <!-- List created on -->
     <div class="row centered">
