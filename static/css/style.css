@@ -101,11 +101,14 @@ nav h1 {
 .card {
     min-width: 50%;
     width: 65%;
-    min-height: 80px;
+    min-height: 70px;
     font-size: large;
+    font-weight: 600;
     text-align: center;
     vertical-align: middle;
     border: 3px solid black;
+    margin: 10px 0;
+    background-image: repeating-linear-gradient(#ECE63D 0px, #ECE63D 24px, rgba(0, 128, 128, 0.562) 25px);
 }
 
 
@@ -165,6 +168,17 @@ nav h1 {
         margin: 0px 50px;
     }
 
+    /*List of lists page*/
+    .card {
+        font-size: 23px;
+        background-image: repeating-linear-gradient(#ECE63D 0px, #ECE63D 36px, rgba(0, 128, 128, 0.562) 40px);
+    }
+
+    #username-heading {
+        font-size: 40px;
+        margin: 27px 0;
+    }
+
 }
 
 @media (min-width: 992px) {
@@ -186,5 +200,12 @@ nav h1 {
     #landing-page-container p {
         margin: 0px 85px;
         font-size: large;
+    }
+
+    /*List of lists page*/
+    .card {
+        font-size: 23px;
+        height: 90px;
+        width: 50%;
     }
 }

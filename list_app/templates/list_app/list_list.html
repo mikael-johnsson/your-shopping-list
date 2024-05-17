@@ -7,8 +7,8 @@
 <h3 id="username-heading">{{user}}'s lists</h3>
 
 {% for list in lists %}
-  <a href="{% url 'list_detail' list.id %}">
-      <div class="card mx-auto p-2 card-title">
+  <a class="card mx-auto p-2 card-title" href="{% url 'list_detail' list.id %}">
+      <div>
           {{ list.name }}
       </div>
   </a>
