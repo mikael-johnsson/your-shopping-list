@@ -3,6 +3,7 @@
 
 {% block content%}
 <div class="container" id="top-container">
+    <!-- List name -->
     <div class="row centered">
         <h3 class="col-6 list-heading" id="listName">{{ list.name }}</h3>
         <button type="submit" id="item-edit-button">Edit list name</button>
@@ -15,9 +16,11 @@
         </div>
         <a href="{% url 'home' %}" class="col-4">Go back button</a>
     </div>
+    <!-- List created on -->
     <div class="row centered">
         <p>Created: {{ list.created_on }}</p>
     </div>
+    <!--List items -->
     <div class="row centered">
         <div class="list-container">
             <ul>
@@ -51,6 +54,7 @@
             </ul>
         </div>
     </div>
+    <!-- List buttons -->
     <div class="row button-row">
         <button class="btn btn-primary" id="share-list-button">SHARE</button>
         <button class="btn btn-primary" id="delete-list-button">DELETE LIST</button>
