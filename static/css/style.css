@@ -20,13 +20,6 @@ a {
     font-size: medium;
 }
 
-a:visited {
-    text-decoration: underline;
-}
-
-a:link {
-    text-decoration: underline;
-}
 
 /* Nav bar*/
 .navbar {
@@ -36,9 +29,6 @@ a:link {
     padding: 20px;
 }
 
-.navbar a:visited, .navbar a:link {
-    text-decoration: none;
-}
 
 nav h1 {
     text-transform: uppercase;
@@ -52,6 +42,11 @@ nav h1 {
 
 .nav-item {
     margin: 5px;
+}
+
+/*Sign up / Login / Logout */
+.link {
+    text-decoration: underline;
 }
 
 /* Landing page not logged in user*/
@@ -112,6 +107,7 @@ nav h1 {
     vertical-align: middle;
     border: 3px solid black;
 }
+
 
 /* List detail page*/
 
