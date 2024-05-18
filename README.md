@@ -1,4 +1,4 @@
-#Your Shopping List
+# Your Shopping List
 *Your Shopping List* is the place to go if you want a quick and easy way to create a shopping list while also have the abilty to keep track of what you already bought, and share that list someone.
 
 This is a project created during the Code Institute flag, being the portfolio project 4. It is for learning purposes only.
@@ -6,7 +6,7 @@ This is a project created during the Code Institute flag, being the portfolio pr
 Link to live site
 Picture of responsiveness
 
-##Contents
+## Contents
 
 * [User Experience](#user-experience)
     * [Colour Scheme](#colour-scheme)
@@ -54,7 +54,16 @@ This project is intended to help with the everyday life mission to go to the gro
 * Have a quick and secure way of sharing lists
 
 ### Agile Methods
-This project were planned with agile methods. 
+This project was planned with agile methods. As some features depended on others to be built, the obvious way was to start with the most fundamental features and user stories first and work upwards. Since one feature had the label "Could have" it was planned to be built last, after the site was fully functioning.
+
+### MoSCoW Method
+The issues created for this site were labeled with the use of the MoSCoW method. That divides the labels into:
+
+* Must have - features that is a must for the site to be working as intended
+* Should have - features that the site should have to be of use to the user
+* Could have - features that could bring that little extra to the user
+* Won't have - features that no longer fit the project or won't be included in this release
+
 
 
 
