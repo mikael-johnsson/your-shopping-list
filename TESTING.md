@@ -3,7 +3,7 @@
 This is the testing for the site *Your Shopping List*.
 
 Link to live site.
-Link to readme.
+Find the README [here](README.md).
 
 ## Automated Testing
 ### Linter Validation

@@ -14,7 +14,7 @@ Picture of responsiveness
 * [Project Planning](#project-planning)
     * [Agile Methods](#agile-methods)
     * [MoSCoW method](moscow-method)
-    * [User stories](#user-stories)
+    * [User Stories](#user-stories)
     * [Wireframes](#wireframes)
     * [ERDs](#erds)
 * [Features](#features)
@@ -64,7 +64,38 @@ The issues created for this site were labeled with the use of the MoSCoW method.
 * Could have - features that could bring that little extra to the user
 * Won't have - features that no longer fit the project or won't be included in this release
 
+### User Stories
+|User Story|Priority|
+|-|-|
+|As a user I can create an account so that I can sign in to the application.|MUST HAVE|
+|As a user I can log in to my account so that I can see, edit and delete my lists|MUST HAVE|
+|As a user I can log out of my account so that me or someone else can log in to another account on the same device|MUST HAVE|
+|As a user I can create a shopping list so that I have a place to write what groceries to buy.|SHOULD HAVE|
+|As a user I can edit a list I created before so that I can reuse older lists or change a list I intended to use.|SHOULD HAVE|
+|As a user I can delete a list so that I don’t have to see it in my list menu|SHOULD HAVE|
+|As a user I can share a list so that other people can shop from a list I have created.|COULD HAVE|
+|As an admin I can delete users so that inactive users don’t take up space in the database|SHOULD HAVE|
 
+### Wireframes
+The site was developed mobile first. The desktop wireframes are therefor bigger versions of the mobile wireframes.
+
+**Mobile**
+
+![Wireframe for the start page on mobile](static/images/documentation/mobile_start_page.png)
+![Wireframe for the sign up page on mobile](static/images/documentation/mobile_sign_up.png)
+![Wireframe for the login page on mobile](static/images/documentation/mobile_login.png)
+![Wireframe for the list menu on mobile](static/images/documentation/mobile_list_menu.png)
+![Wireframe for the list on mobile](static/images/documentation/mobile_handle_list.png)
+![Wireframe for the share list feature on mobile](static/images/documentation/mobile_share_list.png)
+
+**Desktop**
+
+![Wireframe for the start page on desktop](static/images/documentation/Desktop_start_page.png)
+![Wireframe for the sign up page on desktop](static/images/documentation/Desktop_sign_up.png)
+![Wireframe for the login page on desktop](static/images/documentation/Desktop_login.png)
+![Wireframe for the list menu on desktop](static/images/documentation/Desktop_list_menu.png)
+![Wireframe for the list on desktop](static/images/documentation/Desktop_handle_list.png)
+![Wireframe for the share list feature on desktop](static/images/documentation/Desktop_share_list.png)
 
 
 
