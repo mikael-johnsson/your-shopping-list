@@ -1,12 +1,12 @@
 /* General*/
 html {
     height: 100%;
-  }
+}
 
 body {
     background-color: rgb(236, 229, 220);
     min-height: 100%;
-  }
+}
 
 .username-heading {
     text-align: center;
@@ -26,7 +26,6 @@ a {
     margin: 8px;
 }
 
-
 /* Nav bar*/
 .navbar {
     background-color: rgb(45, 175, 214);
@@ -34,7 +33,6 @@ a {
     flex-wrap: nowrap;
     padding: 12px 8px;
 }
-
 
 nav h1 {
     text-transform: uppercase;
@@ -60,7 +58,6 @@ nav h1 {
 }
 
 /* Landing page not logged in user*/
-
 #landing-page-body {
     min-width: 50%;
     max-width: 90%;
@@ -70,13 +67,11 @@ nav h1 {
     box-shadow: 0px 0px 5px 0px #888;
     padding-top: 40px;
     padding-bottom: 40px;
-
 }
 
 #landing-page-container {
     height: 100%;
     background-image: repeating-linear-gradient(#eed878 0px, #eed878 24px, rgba(0, 128, 128, 0.329) 25px);
-    
 }
 
 #landing-page-container h3 {
@@ -102,7 +97,6 @@ nav h1 {
 }
 
 /* List of lists page*/
-
 #username-heading {
     text-align: center;
     margin: 15px 0;
@@ -129,11 +123,9 @@ nav h1 {
 
 #new-list-input {
     max-width: 310px;
-    
 }
 
 /* List detail page*/
-
 #top-container {
     max-width: 450px;
     text-align: left;
@@ -220,7 +212,6 @@ nav h1 {
     font-size: 10px;
     margin: 1px;
     padding: 1px;
-    
 }
 
 .inline-form {
@@ -268,7 +259,6 @@ nav h1 {
 }
 
 /* Delete list modal*/
-
 .delete-list-form {
     display: inline-block;
 }
@@ -277,7 +267,6 @@ nav h1 {
     width: 96px;
     font-size: medium;
 }
-
 
 @media (min-width: 768px) {
     /*Nav bar*/
@@ -293,7 +282,6 @@ nav h1 {
     }
 
     /* Landing page not logged in user*/
-
     #landing-page-body {
         margin: 40px auto;
     }
@@ -318,11 +306,9 @@ nav h1 {
     }
 
     /* List detail page*/
-    
     #go-back-button {
         font-size: 40px;
         margin: 40px 0 0 40px;
-        
     }
 
     #top-container {
@@ -335,7 +321,6 @@ nav h1 {
 
     .items-li-container {
         margin: 7px 0;
-
     }
     
     #name-edit-button {
@@ -352,14 +337,10 @@ nav h1 {
     .edit-item {
         width: 120px;
     }
-
-   
-
 }
 
 @media (min-width: 992px) {
     /*Nav bar*/
-
     .navbar {
         padding: 20px 50px;
     }
@@ -388,7 +369,6 @@ nav h1 {
     #go-back-button {
         font-size: 45px;
         margin: 50px 0 0 70px;
-        
     }
 
     .list-items {

@@ -2,7 +2,8 @@
 {% load static %}
 
 {% block content%}
-<a href="{% url 'home' %}" class="col-2" id="go-back-link"><i class="fa-solid fa-rotate-left" id="go-back-button"></i></a>
+<a href="{% url 'home' %}" class="col-2" id="go-back-link"><i class="fa-solid fa-rotate-left"
+    id="go-back-button"></i></a>
 <div class="container" id="top-container">
   <!-- List name -->
   <div class="row centered">
@@ -18,57 +19,58 @@
   </div>
   <!-- List created on -->
   <div class="row centered">
-      <p id="created-on">Created: {{ list.created_on }}</p>
+    <p id="created-on">Created: {{ list.created_on }}</p>
   </div>
   <!--List items -->
   <div class="row centered">
-      <div class="list-container">
-          <ul>
-              {% for item in items %}
-              <li class="items-li-container" id="{{ item.id }}">
-                <div class="item-container">
-                  <div class="item-left">
-                    <input type="checkbox" {% if item.checked == True %} checked {% endif %}>
-                    <span class="list-items">{{ item.content }}</span>
-                  </div>
-                  <div class="item-right">
-                    <button type="submit" class="{{item.id}} item-edit-button item-button btn btn-primary">EDIT</button>
-                    <span>
-                      <form action="{% url 'delete_item' item.id %}" class="inline-form" method="POST">
-                        {% csrf_token %}
-                        <button type="submit" class="item-button btn btn-danger">DELETE</button>
-                      </form>
-                    </span>
-                  </div>
-                  <span class="{{item.id}} item-edit-form">
-                    <form action="{% url 'edit_item' item.id %}" class="inline-form" method="POST">
-                      {% csrf_token %}
-                      <input type="text" name="edit-item" class="edit-item" required>
-                      <button type="submit" class="item-button btn btn-primary">UPDATE</button>
-                    </form>
-                  </span>
-                </div>
-              </li>
-              {% endfor %}
-              <li>
-                <form action="{% url 'create_item' list.id %}" method="POST">
+    <div class="list-container">
+      <ul>
+        {% for item in items %}
+        <li class="items-li-container" id="{{ item.id }}">
+          <div class="item-container">
+            <div class="item-left">
+              <input type="checkbox" {% if item.checked == True %} checked {% endif %}>
+              <span class="list-items">{{ item.content }}</span>
+            </div>
+            <div class="item-right">
+              <button type="submit" class="{{item.id}} item-edit-button item-button btn btn-primary">EDIT</button>
+              <span>
+                <form action="{% url 'delete_item' item.id %}" class="inline-form" method="POST">
                   {% csrf_token %}
-                  <input type="text" name="new-item" id="add-item-input" required>
-                  <button type="submit" class="item-button btn btn-success">ADD</button>
+                  <button type="submit" class="item-button btn btn-danger">DELETE</button>
                 </form>
-              </li>
-          </ul>
-      </div>
-  </div>
-    <!-- List buttons -->
-    <div class="row button-row">
-        <button class="btn btn-primary list-button" id="share-list-button">SHARE</button>
-        <button class="btn btn-danger list-button" id="delete-list-button">DELETE LIST</button>
+              </span>
+            </div>
+            <span class="{{item.id}} item-edit-form">
+              <form action="{% url 'edit_item' item.id %}" class="inline-form" method="POST">
+                {% csrf_token %}
+                <input type="text" name="edit-item" class="edit-item" required>
+                <button type="submit" class="item-button btn btn-primary">UPDATE</button>
+              </form>
+            </span>
+          </div>
+        </li>
+        {% endfor %}
+        <li>
+          <form action="{% url 'create_item' list.id %}" method="POST">
+            {% csrf_token %}
+            <input type="text" name="new-item" id="add-item-input" required>
+            <button type="submit" class="item-button btn btn-success">ADD</button>
+          </form>
+        </li>
+      </ul>
     </div>
+  </div>
+  <!-- List buttons -->
+  <div class="row button-row">
+    <button class="btn btn-primary list-button" id="share-list-button">SHARE</button>
+    <button class="btn btn-danger list-button" id="delete-list-button">DELETE LIST</button>
+  </div>
 </div>
 
 <!--Delete list confirmation modal-->
-<div class="modal fade" id="delete-confirmation-modal" tabindex="-1" aria-labelledby="delete-confirmation-modal" aria-hidden="true">
+<div class="modal fade" id="delete-confirmation-modal" tabindex="-1" aria-labelledby="delete-confirmation-modal"
+  aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -76,11 +78,11 @@
         <button type="button" class="btn-close delete-list-button" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body container-fluid">
-      <button type="button" class="btn btn-secondary delete-list-button" data-bs-dismiss="modal">Cancel</button>
-      <form class="delete-list-form" action="{% url 'list_delete' list.id %}" method="POST">
-        {% csrf_token %}
-        <button type="submit" class="btn btn-danger delete-list-button">Delete list</button>
-      </form>
+        <button type="button" class="btn btn-secondary delete-list-button" data-bs-dismiss="modal">Cancel</button>
+        <form class="delete-list-form" action="{% url 'list_delete' list.id %}" method="POST">
+          {% csrf_token %}
+          <button type="submit" class="btn btn-danger delete-list-button">Delete list</button>
+        </form>
       </div>
     </div>
   </div>
@@ -96,13 +98,13 @@
       </div>
       <div class="modal-body container-fluid">
         <form class="row" action="{% url 'list_detail' list.id %}" onsubmit="return sendMail(this);">
-            {% csrf_token %}
-            <label class="form-label" for="senderName">Your name:</label>
-            <input type="text" name="senderName" required>
-            <label class="form-label" for="emailInput">Send list to:</label>
-            <input type="email" name="emailInput" required>
-            <button type="button" class="btn btn-secondary share-list-button" data-bs-dismiss="modal">Cancel</button>
-            <button type="submit" class="btn btn-primary share-list-button">Send list</button>
+          {% csrf_token %}
+          <label class="form-label" for="senderName">Your name:</label>
+          <input type="text" name="senderName" required>
+          <label class="form-label" for="emailInput">Send list to:</label>
+          <input type="email" name="emailInput" required>
+          <button type="button" class="btn btn-secondary share-list-button" data-bs-dismiss="modal">Cancel</button>
+          <button type="submit" class="btn btn-primary share-list-button">Send list</button>
         </form>
       </div>
     </div>
@@ -111,12 +113,12 @@
 
 <!--Delete list confirmation toast-->
 <div class="toast-container position-fixed bottom-0 end-0 p-3">
-    <div id="deleteListToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-      <span class="toast-body">
-        You list has been deleted.
-      </span>
-      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-    </div>
+  <div id="deleteListToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+    <span class="toast-body">
+      You list has been deleted.
+    </span>
+    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+  </div>
 </div>
 
 {% endblock content %}

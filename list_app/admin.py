@@ -7,5 +7,4 @@ class ListAdmin(SummernoteModelAdmin):
     list_display = ('name', 'author', 'created_on')
     search_fields = ['name']
 
-# Register your models here.
 admin.site.register(ListItem)

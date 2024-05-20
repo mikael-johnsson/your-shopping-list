@@ -7,17 +7,17 @@
 <h3 id="username-heading">{{user}}'s lists</h3>
 
 {% for list in lists %}
-  <a class="card mx-auto p-2 card-title" href="{% url 'list_detail' list.id %}">
-      <div>
-          {{ list.name }}
-      </div>
-  </a>
+<a class="card mx-auto p-2 card-title" href="{% url 'list_detail' list.id %}">
+  <div>
+    {{ list.name }}
+  </div>
+</a>
 
 {% endfor %}
 <a class="card mx-auto p-2" href="{% url 'create_list' user %}">
-    <div>
-        CREATE NEW LIST +
-    </div>
+  <div>
+    CREATE NEW LIST +
+  </div>
 </a>
 
 <!-- Landing page content for not logged in user -->
@@ -25,35 +25,37 @@
 <div id="landing-page-body">
   <div id="landing-page-container">
     <h3>Time to go shopping soon?</h3>
-    <p>...then you have come to the right place! At <em>Your Shopping List</em> you can create lists for each grocery store run
-      and use the checkbox to keep track of what you have already bought. <br><br>Not in the mood for shopping? <br><br>Send the list
+    <p>...then you have come to the right place! At <em>Your Shopping List</em> you can create lists for each grocery
+      store run
+      and use the checkbox to keep track of what you have already bought. <br><br>Not in the mood for shopping?
+      <br><br>Send the list
       to a partner or friend! I am sure they can do it!</p>
   </div>
 </div>
 {% endif %}
 
-  <!-- Create new list Modal -->
-  {% if modalOkay %}
-  <div class="modal fade" id="new-list-modal" tabindex="-1" aria-labelledby="new-list-modal" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Create new list</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body container-fluid">
-          <form class="row" action="{% url 'create_list_name' user %}" method="POST" id="ListName">
-            {% csrf_token %}
-            <label class="form-label" for="new-list-name">Add a list name:</label>
-            <input id="new-list-input" class="col-12" type="text" name="new-list-name" required>
-            <button type="button" class="btn btn-secondary btn-long col-6" data-bs-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-primary btn-long col-6">Save new list</button>
-          </form>
-        </div>
+<!-- Create new list Modal -->
+{% if modalOkay %}
+<div class="modal fade" id="new-list-modal" tabindex="-1" aria-labelledby="new-list-modal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Create new list</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body container-fluid">
+        <form class="row" action="{% url 'create_list_name' user %}" method="POST" id="ListName">
+          {% csrf_token %}
+          <label class="form-label" for="new-list-name">Add a list name:</label>
+          <input id="new-list-input" class="col-12" type="text" name="new-list-name" required>
+          <button type="button" class="btn btn-secondary btn-long col-6" data-bs-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary btn-long col-6">Save new list</button>
+        </form>
       </div>
     </div>
   </div>
-  {% endif %}
+</div>
+{% endif %}
 
 <!-- list_list.html content ends here -->
 {% endblock %}

@@ -1,5 +1,4 @@
 //Delete list toast
-
 const deleteListButton = document.getElementById('delete-list-button')
 const deleteListToast = document.getElementById('deleteListToast')
 
@@ -16,6 +15,8 @@ function showDeleteListModal(){
     const modal = new bootstrap.Modal(deleteConfirmationModal);
     modal.show();
 }
+
+
 if(deleteListButton){ //if statement to avoid error in console of non existing variable
     deleteListButton.addEventListener("click", showDeleteListModal)
 }
@@ -27,6 +28,8 @@ function shareListModal(){
     const modal = new bootstrap.Modal(emailModal);
     modal.show();
 }
+
+
 if(shareListButton){ //if statement to avoid error in console of non existing variable
     shareListButton.addEventListener("click", shareListModal)
 }
@@ -64,7 +67,6 @@ const newListModal = document.getElementById("new-list-modal")
 if(newListModal){
     const modal = new bootstrap.Modal(newListModal);
     modal.show();
-    
 }
 
 // Edit item
