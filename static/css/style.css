@@ -229,6 +229,16 @@ nav h1 {
     align-items: center;
 }
 
+/*Share list modal*/
+.share-list-form {
+    display: flex;
+}
+
+.form-label {
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
 
 @media (min-width: 768px) {
     /*Nav bar*/
