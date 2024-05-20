@@ -163,6 +163,40 @@ nav h1 {
     font-size: 14px;
 }
 
+.list-container {
+    border: 2px solid black;
+    text-align: left;
+    padding: 6px 3px;
+}
+
+.list-container ul {
+    list-style-type: none;
+    padding-left: 6px;
+}
+
+.item-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+}
+
+.item-button {
+    width: 39px;
+    height: 24px;
+    font-size: 10px;
+    margin: 1px;
+    padding: 1px;
+    
+}
+
+.inline-form {
+    display: inline-block;
+}
+
+#add-item-input {
+    width: 173px;
+}
+
 .button-row {
     justify-content: space-evenly;
     gap: 10px;
@@ -172,16 +206,6 @@ nav h1 {
     width: 90px;
     height: 60px;
     font-size: medium;
-}
-
-.list-container {
-    border: 2px solid black;
-    text-align: left;
-    padding: 20px;
-}
-
-.list-container ul {
-    list-style-type: none;
 }
 
 .row {

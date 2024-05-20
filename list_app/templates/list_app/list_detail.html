@@ -20,40 +20,46 @@
   <div class="row centered">
       <p id="created-on">Created: {{ list.created_on }}</p>
   </div>
-    <!--List items -->
-    <div class="row centered">
-        <div class="list-container">
-            <ul>
-                {% for item in items %}
-                <li id="{{ item.id }}">
-                  <div class="item-content">
+  <!--List items -->
+  <div class="row centered">
+      <div class="list-container">
+          <ul>
+              {% for item in items %}
+              <li id="{{ item.id }}">
+                <div class="item-container">
+                  <div class="item-left">
                     <input type="checkbox" {% if item.checked == True %} checked {% endif %}>
-                    <span class="listItems">{{ item.content }}</span>
-                    <button type="submit" class="item-edit-button">Edit item</button>
+                    <span class="list-items">{{ item.content }}</span>
                   </div>
-                  <div class="item-edit-form">
-                    <form action="{% url 'edit_item' item.id %}" method="POST">
-                      {% csrf_token %}
-                      <input type="text" name="edit-item" id="edit-item" required>
-                      <button type="submit">Update item</button>
-                    </form>
+                  <div class="item-right">
+                    <button type="submit" class="item-edit-button item-button btn btn-primary">EDIT</button>
+                    <span class="item-edit-form">
+                      <form action="{% url 'edit_item' item.id %}" class="inline-form" method="POST">
+                        {% csrf_token %}
+                        <input type="text" name="edit-item" id="edit-item" required>
+                        <button type="submit" class="item-button btn btn-primary">UPDATE</button>
+                      </form>
+                    </span>
+                    <span>
+                      <form action="{% url 'delete_item' item.id %}" class="inline-form" method="POST">
+                        {% csrf_token %}
+                        <button type="submit" class="item-button btn btn-primary">DELETE</button>
+                      </form>
+                    </span>
                   </div>
-                  <form action="{% url 'delete_item' item.id %}" method="POST">
-                    {% csrf_token %}
-                    <button type="submit">Delete item</button>
-                  </form>
-                </li>
-                {% endfor %}
-                <li>
-                  <form action="{% url 'create_item' list.id %}" method="POST">
-                    {% csrf_token %}
-                    <input type="text" name="new-item" required>
-                    <button type="submit">Add item</button>
-                  </form>
-                </li>
-            </ul>
-        </div>
-    </div>
+                </div>
+              </li>
+              {% endfor %}
+              <li>
+                <form action="{% url 'create_item' list.id %}" method="POST">
+                  {% csrf_token %}
+                  <input type="text" name="new-item" id="add-item-input" required>
+                  <button type="submit" class="item-button btn btn-primary">ADD</button>
+                </form>
+              </li>
+          </ul>
+      </div>
+  </div>
     <!-- List buttons -->
     <div class="row button-row">
         <button class="btn btn-primary list-button" id="share-list-button">SHARE</button>
