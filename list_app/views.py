@@ -106,6 +106,26 @@ def create_list_name(request, user):
         "items": items}
     )
 
+def edit_list_name(request, id):
+
+    list = List.objects.get(id=id)
+    items = ListItem.objects.all().filter(list=list.id)
+
+    if request.method == "POST":
+        print("nu är det post")
+        list.name = request.POST.get('new-list-name')
+        list.save()
+    elif request.method == "GET":
+        print("nu är det get")
+    
+    return render(
+        request,
+        "list_app/list_detail.html",
+        {"list": list,
+        "items": items}
+    )
+
+
 def list_delete(request, id):
     """
     view to delete list
