@@ -84,7 +84,7 @@ def create_list(request, user):
             "modalOkay": modalOkay}
             )
 
-def edit_list(request, user):
+def create_list_name(request, user):
     
     user = List.objects.filter(author=request.user)
     maxid = user.aggregate(Max('id'))
