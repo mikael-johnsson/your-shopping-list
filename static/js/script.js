@@ -77,10 +77,12 @@ for (let form of updateForms){
 function editItem(event) {
     let parentDiv = event.target.parentElement
     parentDiv.style.display = "none";
-    for (let form of updateForms){
-        if(form.previousElementSibling.children[2] == event.target){
-            form.style.display = "block";
-        }
+    let button = event.target
+    let buttonClassItem = button.className.split('')[0]
+    
+    for (let form of updateForms) {
+        if(form.className.split('')[0] == buttonClassItem)
+            form.style.display ="inline-block"
     }
 
 }

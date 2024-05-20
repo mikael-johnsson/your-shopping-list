@@ -32,14 +32,7 @@
                     <span class="list-items">{{ item.content }}</span>
                   </div>
                   <div class="item-right">
-                    <button type="submit" class="item-edit-button item-button btn btn-primary">EDIT</button>
-                    <span class="item-edit-form">
-                      <form action="{% url 'edit_item' item.id %}" class="inline-form" method="POST">
-                        {% csrf_token %}
-                        <input type="text" name="edit-item" id="edit-item" required>
-                        <button type="submit" class="item-button btn btn-primary">UPDATE</button>
-                      </form>
-                    </span>
+                    <button type="submit" class="{{item.id}} item-edit-button item-button btn btn-primary">EDIT</button>
                     <span>
                       <form action="{% url 'delete_item' item.id %}" class="inline-form" method="POST">
                         {% csrf_token %}
@@ -47,6 +40,13 @@
                       </form>
                     </span>
                   </div>
+                  <span class="{{item.id}} item-edit-form">
+                    <form action="{% url 'edit_item' item.id %}" class="inline-form" method="POST">
+                      {% csrf_token %}
+                      <input type="text" name="edit-item" class="edit-item" required>
+                      <button type="submit" class="item-button btn btn-primary">UPDATE</button>
+                    </form>
+                  </span>
                 </div>
               </li>
               {% endfor %}
