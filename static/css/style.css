@@ -186,6 +186,11 @@ nav h1 {
     flex-wrap: nowrap;
 }
 
+.list-items {
+    display: inline-block;
+    width: 115px;
+}
+
 .item-button {
     width: 39px;
     height: 24px;
