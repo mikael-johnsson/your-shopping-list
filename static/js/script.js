@@ -75,14 +75,18 @@ for (let form of updateForms){
 }
 
 function editItem(event) {
-    let parentDiv = event.target.parentElement
-    parentDiv.style.display = "none";
     let button = event.target
-    let buttonClassItem = button.className.split('')[0]
+    let parent = button.parentElement
+    parent.style.display = "none";
+    let buttonClassItem = button.classList[0]
     
     for (let form of updateForms) {
-        if(form.className.split('')[0] == buttonClassItem)
+        let formClassItem = form.classList[0]
+        if(formClassItem == buttonClassItem){
             form.style.display ="inline-block"
+        }
+
+
     }
 
 }

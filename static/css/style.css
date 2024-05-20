@@ -120,6 +120,12 @@ nav h1 {
 
 
 /* List detail page*/
+
+#top-container {
+    max-width: 450px;
+    text-align: left;
+}
+
 #go-back-link {
     padding: 0;
     flex-shrink: 2;
@@ -193,6 +199,10 @@ nav h1 {
     display: inline-block;
 }
 
+.edit-item {
+    width: 90px;
+}
+
 #add-item-input {
     width: 173px;
     margin-top: 8px;
@@ -214,10 +224,6 @@ nav h1 {
     align-items: center;
 }
 
-#top-container {
-    max-width: 450px;
-    text-align: left;
-}
 
 @media (min-width: 768px) {
     /*Nav bar*/
