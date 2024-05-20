@@ -32,7 +32,7 @@ a {
     background-color: rgb(45, 175, 214);
     justify-content: space-between;
     flex-wrap: nowrap;
-    padding: 20px;
+    padding: 12px 8px;
 }
 
 
@@ -47,7 +47,7 @@ nav h1 {
 }
 
 .nav-item {
-    margin: 5px;
+    margin: 3px;
 }
 
 /*Sign up / Login / Logout */
@@ -110,7 +110,7 @@ nav h1 {
 
 .card {
     min-width: 50%;
-    width: 65%;
+    width: 67%;
     min-height: 70px;
     font-size: large;
     font-weight: 600;
@@ -127,12 +127,18 @@ nav h1 {
     width: 128px;
 }
 
+#new-list-input {
+    max-width: 310px;
+    
+}
+
 
 /* List detail page*/
 
 #top-container {
     max-width: 450px;
     text-align: left;
+    padding: 0 6px;
 }
 
 #go-back-link {
@@ -179,7 +185,7 @@ nav h1 {
 }
 
 .list-container {
-    border: 2px solid black;
+    border: 1.5px solid black;
     text-align: left;
     padding: 6px 3px;
 }
@@ -193,6 +199,10 @@ nav h1 {
     display: flex;
     justify-content: space-between;
     flex-wrap: nowrap;
+}
+
+.item-edit-form {
+    text-align: right;
 }
 
 .list-items {
@@ -214,7 +224,7 @@ nav h1 {
 }
 
 .edit-item {
-    width: 90px;
+    width: 86px;
 }
 
 #add-item-input {
@@ -257,6 +267,9 @@ nav h1 {
 
 @media (min-width: 768px) {
     /*Nav bar*/
+    .navbar {
+        padding: 15px 20px;
+    }
     .nav-item {
         font-size: x-large;
     }

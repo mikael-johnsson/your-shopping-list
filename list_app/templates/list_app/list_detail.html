@@ -36,7 +36,7 @@
                     <span>
                       <form action="{% url 'delete_item' item.id %}" class="inline-form" method="POST">
                         {% csrf_token %}
-                        <button type="submit" class="item-button btn btn-primary">DELETE</button>
+                        <button type="submit" class="item-button btn btn-danger">DELETE</button>
                       </form>
                     </span>
                   </div>
@@ -54,7 +54,7 @@
                 <form action="{% url 'create_item' list.id %}" method="POST">
                   {% csrf_token %}
                   <input type="text" name="new-item" id="add-item-input" required>
-                  <button type="submit" class="item-button btn btn-primary">ADD</button>
+                  <button type="submit" class="item-button btn btn-success">ADD</button>
                 </form>
               </li>
           </ul>
@@ -63,7 +63,7 @@
     <!-- List buttons -->
     <div class="row button-row">
         <button class="btn btn-primary list-button" id="share-list-button">SHARE</button>
-        <button class="btn btn-primary list-button" id="delete-list-button">DELETE LIST</button>
+        <button class="btn btn-danger list-button" id="delete-list-button">DELETE LIST</button>
     </div>
 </div>
 

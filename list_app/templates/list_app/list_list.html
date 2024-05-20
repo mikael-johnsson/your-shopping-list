@@ -45,9 +45,9 @@
           <form class="row" action="{% url 'create_list_name' user %}" method="POST" id="ListName">
             {% csrf_token %}
             <label class="form-label" for="new-list-name">Add a list name:</label>
-            <input type="text" name="new-list-name" required>
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-primary btn-long">Save new list</button>
+            <input id="new-list-input" class="col-12" type="text" name="new-list-name" required>
+            <button type="button" class="btn btn-secondary btn-long col-6" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary btn-long col-6">Save new list</button>
           </form>
         </div>
       </div>
