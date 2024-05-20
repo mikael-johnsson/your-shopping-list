@@ -132,7 +132,6 @@ nav h1 {
     
 }
 
-
 /* List detail page*/
 
 #top-container {
@@ -258,10 +257,20 @@ nav h1 {
     margin-bottom: 0;
 }
 
+.share-list-button {
+    width: 89px;
+    font-size: medium;
+}
+
 /* Delete list modal*/
 
 .delete-list-form {
     display: inline-block;
+}
+
+.delete-list-button {
+    width: 96px;
+    font-size: medium;
 }
 
 
