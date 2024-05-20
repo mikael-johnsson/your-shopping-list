@@ -75,12 +75,12 @@
         <h1 class="modal-title fs-5" id="deleteListLabel">Are you sure you want to delete the list?</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body container-fluid">
       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-        <form action="{% url 'list_delete' list.id %}" method="POST">
-          {% csrf_token %}
-          <button type="submit" class="btn btn-primary">Delete list</button>
-        </form>
+      <form class="delete-list-form" action="{% url 'list_delete' list.id %}" method="POST">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Delete list</button>
+      </form>
       </div>
     </div>
   </div>

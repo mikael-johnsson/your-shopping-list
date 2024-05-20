@@ -118,6 +118,11 @@ nav h1 {
     background-image: repeating-linear-gradient(#ECE63D 0px, #ECE63D 24px, rgba(0, 128, 128, 0.562) 25px);
 }
 
+/* Create new list modal */
+.btn-long {
+    width: 127px;
+}
+
 
 /* List detail page*/
 
@@ -237,6 +242,12 @@ nav h1 {
 .form-label {
     padding-left: 0;
     margin-bottom: 0;
+}
+
+/* Delete list modal*/
+
+.delete-list-form {
+    display: inline-block;
 }
 
 

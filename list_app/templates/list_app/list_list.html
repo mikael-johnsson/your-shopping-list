@@ -41,13 +41,13 @@
           <h1 class="modal-title fs-5" id="exampleModalLabel">Create new list</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body">
-          <form action="{% url 'create_list_name' user %}" method="POST" id="ListName">
+        <div class="modal-body container-fluid">
+          <form class="row" action="{% url 'create_list_name' user %}" method="POST" id="ListName">
             {% csrf_token %}
             <label for="new-list-name">Add a list name</label>
             <input type="text" name="new-list-name" required>
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-primary">Save new list</button>
+            <button type="submit" class="btn btn-primary btn-long">Save new list</button>
           </form>
         </div>
       </div>
