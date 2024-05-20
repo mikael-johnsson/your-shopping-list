@@ -25,7 +25,7 @@
       <div class="list-container">
           <ul>
               {% for item in items %}
-              <li id="{{ item.id }}">
+              <li class="items-li-container" id="{{ item.id }}">
                 <div class="item-container">
                   <div class="item-left">
                     <input type="checkbox" {% if item.checked == True %} checked {% endif %}>
