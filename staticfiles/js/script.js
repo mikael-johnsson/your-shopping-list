@@ -19,6 +19,44 @@ function showDeleteListModal(){
 if(deleteListButton){ //if statement to avoid error in console of non existing variable
     deleteListButton.addEventListener("click", showDeleteListModal)
 }
+
+// Share list modal
+const shareListButton = document.getElementById("share-list-button")
+function shareListModal(){
+    const emailModal = document.getElementById("share-list-modal")
+    const modal = new bootstrap.Modal(emailModal);
+    modal.show();
+}
+if(shareListButton){ //if statement to avoid error in console of non existing variable
+    shareListButton.addEventListener("click", shareListModal)
+}
+
+// Share list function (not giving value from listName and listItems)
+function sendMail(shareList) {
+    let listName = document.getElementById("listName")
+    let listItemElements = document.getElementsByClassName("listItems")
+    let listItemValues = []
+    for (let element of listItemElements){
+        let value = element.textContent
+        listItemValues.push(value)
+    }
+    
+    emailjs.send("service_s8rbn75","template_zvdv8q9", {
+        "from_name" : shareList.senderName.value,
+        "to_email": shareList.emailInput.value,
+        "list_name": listName.textContent,
+        "list_items": listItemValues
+    })
+    .then(
+        function(response) {
+            console.log("success", response);
+        },
+        function(error) {
+            console.log("fail", error);
+        }
+    );
+    
+}
     
 
 // Give new list a name modal
@@ -37,12 +75,18 @@ for (let form of updateForms){
 }
 
 function editItem(event) {
-    let parentDiv = event.target.parentElement
-    parentDiv.style.display = "none";
-    for (let form of updateForms){
-        if(form.previousElementSibling.children[2] == event.target){
-            form.style.display = "block";
+    let button = event.target
+    let parent = button.parentElement
+    parent.style.display = "none";
+    let buttonClassItem = button.classList[0]
+    
+    for (let form of updateForms) {
+        let formClassItem = form.classList[0]
+        if(formClassItem == buttonClassItem){
+            form.style.display ="inline-block"
         }
+
+
     }
 
 }
@@ -54,7 +98,7 @@ if(editButtons) {
 }
 
 //Edit list name
-const editNameButton = document.getElementById("item-edit-button")
+const editNameButton = document.getElementById("name-edit-button")
 const editNameForm = document.getElementById("list-name-form")
 editNameForm.style.display = "none";
 
