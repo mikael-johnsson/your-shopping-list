@@ -110,6 +110,7 @@ nav h1 {
     min-height: 70px;
     font-size: large;
     font-weight: 600;
+    text-transform: none;
     text-align: center;
     vertical-align: middle;
     border: 3px solid black;
