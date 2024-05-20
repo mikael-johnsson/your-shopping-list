@@ -16,6 +16,11 @@ def list_list(request):
             "list_app/list_list.html",
             {"lists": lists,}
             )
+    else:
+        return render(
+            request,
+            "list_app/list_list.html",
+            )
 
 
 

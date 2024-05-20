@@ -36,8 +36,8 @@ if(shareListButton){ //if statement to avoid error in console of non existing va
 
 // Share list function (not giving value from listName and listItems)
 function sendMail(shareList) {
-    let listName = document.getElementById("listName")
-    let listItemElements = document.getElementsByClassName("listItems")
+    let listName = document.getElementById("list-name")
+    let listItemElements = document.getElementsByClassName("list-items")
     let listItemValues = []
     for (let element of listItemElements){
         let value = element.textContent
@@ -87,10 +87,7 @@ function editItem(event) {
         if(formClassItem == buttonClassItem){
             form.style.display ="inline-block"
         }
-
-
     }
-
 }
 
 if(editButtons) {
