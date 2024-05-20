@@ -124,36 +124,54 @@ nav h1 {
     padding: 0;
     flex-shrink: 2;
     text-align: center;
-    margin: auto;
+    
 }
 
 #go-back-button {
-    font-size: 40px;
+    font-size: 28px;
+    margin: 20px 0 0 20px;
+}
+
+#list-name {
+    font-size: 22px;
 }
 
 #name-edit-button {
-    width: 50px;
-    height: 50px;
-    font-size: 14px;
-    flex-shrink: 2;
-    align-self: center;
+    width: 40px;
+    height: 40px;
+    font-size: 12px;
+    text-align: center;
+    padding-right: 35px;
+}
+
+#list-name-form {
+    padding: 0;
 }
 
 #new-list-name {
-    width: 30px;
+    width: 80px;
 }
 
 #name-update-button {
-    width: 30px;
+    width: 60px;
     height: 30px;
-    font-size: 12px;
-    flex-shrink: 2;
+    font-size: 10px;
     align-self: center;
+}
+
+#created-on {
+    font-size: 14px;
 }
 
 .button-row {
     justify-content: space-evenly;
     gap: 10px;
+}
+
+.row .list-button {
+    width: 90px;
+    height: 60px;
+    font-size: medium;
 }
 
 .list-container {
@@ -168,6 +186,7 @@ nav h1 {
 
 .row {
     margin: 10px;
+    align-items: center;
 }
 
 #top-container {
@@ -213,15 +232,24 @@ nav h1 {
     /* List detail page*/
     
     #go-back-button {
-        font-size: 50px;
+        font-size: 40px;
+        margin: 40px 0 0 40px;
         
+    }
+
+    #list-name {
+        font-size: 34px;
     }
     
     #name-edit-button {
-        width: 60px;
-        height: 60px;
-        font-size: 17px;
-        flex-shrink: 2;
+        width: 50px;
+        height: 50px;
+        font-size: 15px;
+        padding-right: 43px;
+    }
+
+    #created-on {
+        font-size: 19px;
     }
 
 }
@@ -252,5 +280,11 @@ nav h1 {
         font-size: 23px;
         height: 90px;
         width: 50%;
+    }
+
+    #go-back-button {
+        font-size: 45px;
+        margin: 50px 0 0 70px;
+        
     }
 }
