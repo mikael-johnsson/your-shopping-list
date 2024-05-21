@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content%}
+
+<div class="error-container container">
+    <h1 class="error-heading">Oh no! Seems like there's been a problem.</h1>
+    <p class="error-message">Unfortunately, the page was not found. <span>You can find you way back <a href="{% url 'home' %}">here!</a></span></p>
+    <p class="error-code">Status code: 404</p>
+
+</div>
+
+{% endblock content %}

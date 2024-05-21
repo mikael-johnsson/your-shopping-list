@@ -289,6 +289,27 @@ nav h1 {
     font-size: medium;
 }
 
+/* 404, 403, 500 error pages*/
+.error-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 7px;
+}
+
+.error-heading {
+    margin-top: 12px;
+}
+
+.error-message {
+    font-size: 20px;
+}
+
+.error-code {
+    font-size: 16px;
+    font-weight: 600;
+}
+
 @media (min-width: 768px) {
     /*Nav bar*/
     .navbar {
