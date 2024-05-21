@@ -70,7 +70,10 @@ function showNewListModal(){
 }
 
 newListModalButton = document.getElementById("create-list-button")
-newListModalButton.addEventListener("click", showNewListModal )
+if(newListModalButton) {
+    newListModalButton.addEventListener("click", showNewListModal )
+}
+
 
 // Edit item
 const editButtons = document.getElementsByClassName("item-edit-button")

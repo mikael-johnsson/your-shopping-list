@@ -60,24 +60,6 @@ def create_list(request, user):
             {"lists": lists,}
             )
 
-def create_list_name(request, user):
-    
-    user = List.objects.filter(author=request.user)
-    maxid = user.aggregate(Max('id'))
-    list = user.get(id=maxid["id__max"])
-    items = ListItem.objects.all().filter(list=list.id)
-    
-    if request.method == "POST":
-        list.name = request.POST.get('new-list-name')
-        list.save()
-    
-    return render(
-        request,
-        "list_app/list_detail.html",
-        {"list": list,
-        "items": items}
-    )
-
 
 def edit_list_name(request, id):
 

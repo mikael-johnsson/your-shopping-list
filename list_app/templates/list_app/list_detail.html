@@ -32,7 +32,7 @@
               <span class="list-items"><input type="checkbox" {% if item.checked == True %} checked {% endif %}> {{ item.content }}</span>
             </div>
             <div class="item-right">
-              <button type="submit" class="{{item.id}} item-edit-button item-button btn btn-primary">EDIT</button>
+              <button type="button" class="{{item.id}} item-edit-button item-button btn btn-primary">EDIT</button>
               <span>
                 <form action="{% url 'delete_item' item.id %}" class="inline-form" method="POST">
                   {% csrf_token %}
@@ -123,5 +123,3 @@
 </div>
 
 {% endblock content %}
-{% block extras %}
-{% endblock extras%}
