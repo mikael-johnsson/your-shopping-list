@@ -88,13 +88,15 @@ def list_delete(request, id):
 
 def save_list(request, id):
     list = List.objects.get(id=id)
-    dbItems = ListItem.objects.all().filter(list=id)
-    
-    
-
-    
-    
-        
+    items = ListItem.objects.all().filter(list=id)
+    checkedItems = []
+    unCheckedItems = []
+    for item in items:
+        if item.checked == True:
+            checkedItems.append(item)
+        else:
+            unCheckedItems.append(item)
+           
     
     return redirect('list_detail', id)
 

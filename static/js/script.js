@@ -75,13 +75,36 @@ if(newListModalButton) {
 }
 
 
-// Edit item
+// Edit items section//
+const editListButton = document.getElementById("edit-list-button")
 const editButtons = document.getElementsByClassName("item-edit-button")
+const deleteButtons = document.getElementsByClassName("delete-item-button")
 const updateForms = document.getElementsByClassName("item-edit-form")
+
+//Hide item buttons and update forms
+for (let button of editButtons){
+    button.style.display = "none"
+}
+
+for (let button of deleteButtons){
+    button.style.display = "none"
+}
 for (let form of updateForms){
     form.style.display = "none"
 }
 
+//Display item buttons
+function showItemButtons(){
+    for (let button of editButtons){
+        button.style.display = "block"
+    }
+
+    for (let button of deleteButtons){
+        button.style.display = "block"
+    }
+}
+
+//Hide buttons and display update form
 function editItem(event) {
     let button = event.target
     let parent = button.parentElement
@@ -96,11 +119,18 @@ function editItem(event) {
     }
 }
 
+// Button to display item buttons
+if(editListButton){
+    editListButton.addEventListener("click", showItemButtons)
+}
+
+// Buttons to display update form
 if(editButtons) {
     for (let button of editButtons){
     button.addEventListener("click", editItem)
     }
 }
+
 
 //Edit list name
 const editNameButton = document.getElementById("name-edit-button")

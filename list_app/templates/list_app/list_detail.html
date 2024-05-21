@@ -18,8 +18,9 @@
     </div>
   </div>
   <!-- List created on -->
-  <div class="row centered">
-    <p id="created-on">Created: {{ list.created_on }}</p>
+  <div class="row">
+    <p id="created-on" class="col-8">Created: {{ list.created_on }}</p>
+    <button class="btn btn-primary col-4" id="edit-list-button">EDIT LIST</button>
   </div>
   <!--List items -->
   <div class="row centered">
@@ -36,7 +37,7 @@
               <span>
                 <form action="{% url 'delete_item' item.id %}" class="inline-form" method="POST">
                   {% csrf_token %}
-                  <button type="submit" class="item-button btn btn-danger">DELETE</button>
+                  <button type="submit" class="delete-item-button item-button btn btn-danger">DELETE</button>
                 </form>
               </span>
             </div>
