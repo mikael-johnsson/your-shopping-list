@@ -17,7 +17,7 @@ function showDeleteListModal(){
 }
 
 
-if(deleteListButton){ //if statement to avoid error in console of non existing variable
+if(deleteListButton){ 
     deleteListButton.addEventListener("click", showDeleteListModal)
 }
 
@@ -30,7 +30,7 @@ function shareListModal(){
 }
 
 
-if(shareListButton){ //if statement to avoid error in console of non existing variable
+if(shareListButton){ 
     shareListButton.addEventListener("click", shareListModal)
 }
 
@@ -62,13 +62,15 @@ function sendMail(shareList) {
     
 }
     
-
 // Give new list a name modal
 const newListModal = document.getElementById("new-list-modal")
-if(newListModal){
+function showNewListModal(){
     const modal = new bootstrap.Modal(newListModal);
     modal.show();
 }
+
+newListModalButton = document.getElementById("create-list-button")
+newListModalButton.addEventListener("click", showNewListModal )
 
 // Edit item
 const editButtons = document.getElementsByClassName("item-edit-button")

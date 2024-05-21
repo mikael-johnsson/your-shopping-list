@@ -14,11 +14,11 @@
 </a>
 
 {% endfor %}
-<a class="card mx-auto p-2" href="{% url 'create_list' user %}">
+<button type="button" id="create-list-button" class="card mx-auto p-2" href="">
   <div>
     CREATE NEW LIST +
   </div>
-</a>
+</button>
 
 <!-- Landing page content for not logged in user -->
 {% else %}
@@ -35,7 +35,6 @@
 {% endif %}
 
 <!-- Create new list Modal -->
-{% if modalOkay %}
 <div class="modal fade" id="new-list-modal" tabindex="-1" aria-labelledby="new-list-modal" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -44,7 +43,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body container-fluid">
-        <form class="row" action="{% url 'create_list_name' user %}" method="POST" id="ListName">
+        <form class="row" action="" method="" id="ListName">
           {% csrf_token %}
           <label class="form-label" for="new-list-name">Add a list name:</label>
           <input id="new-list-input" class="col-12" type="text" name="new-list-name" required>
@@ -55,14 +54,10 @@
     </div>
   </div>
 </div>
-{% endif %}
 
 <!-- list_list.html content ends here -->
 {% endblock %}
 
 {% block extras %}
-
-<script src="{% static 'js/script.js' %}">
-</script>
 
 {% endblock extras%}

@@ -116,6 +116,11 @@ nav h1 {
     background-image: repeating-linear-gradient(#eed878 0px, #eed878 24px, rgba(0, 128, 128, 0.562) 25px);
 }
 
+#create-list-button {
+    align-items: center;
+}
+
+
 /* Create new list modal */
 .btn-long {
     width: 128px;
