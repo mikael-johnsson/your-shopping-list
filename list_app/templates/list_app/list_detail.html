@@ -26,10 +26,10 @@
     <div class="list-container">
       <ul>
         {% for item in items %}
-        <li class="items-li-container" id="{{ item.id }}">
+        <li class="items-li-container" name="list-item-top" id="{{ item.id }}">
           <div class="item-container">
             <div class="item-left">
-              <span class="list-items"><input type="checkbox" {% if item.checked == True %} checked {% endif %}> {{ item.content }}</span>
+              <span class="list-items"><input name="item-checkbox" type="checkbox" {% if item.checked == True %} checked {% endif %}> {{ item.content }}</span>
             </div>
             <div class="item-right">
               <button type="button" class="{{item.id}} item-edit-button item-button btn btn-primary">EDIT</button>
@@ -60,8 +60,13 @@
       </ul>
     </div>
   </div>
+
   <!-- List buttons -->
   <div class="row button-row">
+    <form action="{% url 'save_list' list.id %}" method="POST">
+      {% csrf_token %}
+      <button type="submit" class="btn btn-primary list-button" id="save-list-button">SAVE</button>
+    </form>
     <button class="btn btn-primary list-button" id="share-list-button">SHARE</button>
     <button class="btn btn-danger list-button" id="delete-list-button">DELETE LIST</button>
   </div>
