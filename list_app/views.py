@@ -45,22 +45,19 @@ def list_detail(request, id):
 def create_list(request, user):
     """
     """
-
-    list = List()
-    list.author = request.user
-    list.save()
-    modalOkay = True
-
     if(request.user.is_authenticated):
+        list = List()
+        list.author = request.user
+        list.name = request.POST.get('new-list-name')
+        list.save()
+
         queryset = List.objects.filter(author = request.user)
         lists = queryset
     
     return render(
             request,
             "list_app/list_list.html",
-            {"list": list,
-            "lists": lists,
-            "modalOkay": modalOkay}
+            {"lists": lists,}
             )
 
 def create_list_name(request, user):
