@@ -1,8 +1,7 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic
 from .models import List, ListItem
 from django.urls import reverse
-from django.http import HttpResponse, HttpResponseRedirect
 from django.db.models import Max
 
 
@@ -53,12 +52,8 @@ def create_list(request, user):
 
         queryset = List.objects.filter(author = request.user)
         lists = queryset
-    
-    return render(
-            request,
-            "list_app/list_list.html",
-            {"lists": lists,}
-            )
+
+    return redirect('home')
 
 
 def edit_list_name(request, id):
@@ -70,12 +65,7 @@ def edit_list_name(request, id):
         list.name = request.POST.get('new-list-name')
         list.save()
     
-    return render(
-        request,
-        "list_app/list_detail.html",
-        {"list": list,
-        "items": items}
-    )
+    return redirect('list_detail', id=id)
 
 
 def list_delete(request, id):
@@ -114,12 +104,7 @@ def create_item(request, id):
         item.content = request.POST.get("new-item")
         item.save()
 
-    return render(
-        request,
-        "list_app/list_detail.html",
-        {"list": list,
-        "items": items,}
-    )
+    return redirect('list_detail', id=id)
 
 def edit_item(request, id):
     """
@@ -134,12 +119,7 @@ def edit_item(request, id):
     list = item.list
     items = ListItem.objects.all().filter(list=list)
 
-    return render(
-        request,
-        "list_app/list_detail.html",
-        {"list": list,
-        "items": items,}
-    )
+    return redirect('list_detail', id=list.id)
 
 def delete_item(request, id):
     """
@@ -153,9 +133,4 @@ def delete_item(request, id):
     if request.method == "POST":
         item.delete()
     
-    return render(
-        request,
-        "list_app/list_detail.html",
-        {"list": list,
-        "items": items,}
-    )
+    return redirect('list_detail', id=list.id)
