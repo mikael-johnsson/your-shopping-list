@@ -197,13 +197,18 @@ nav h1 {
     flex-wrap: nowrap;
 }
 
+.item-right {
+    display: flex;
+    align-items: flex-end;
+}
+
+
 .item-edit-form {
     text-align: right;
 }
 
 .list-items {
     display: inline-block;
-    width: 115px;
 }
 
 .item-button {
