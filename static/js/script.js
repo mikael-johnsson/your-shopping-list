@@ -34,7 +34,7 @@ if(shareListButton){ //if statement to avoid error in console of non existing va
     shareListButton.addEventListener("click", shareListModal)
 }
 
-// Share list function (not giving value from listName and listItems)
+// Share list function
 function sendMail(shareList) {
     let listName = document.getElementById("list-name")
     let listItemElements = document.getElementsByClassName("list-items")
@@ -48,7 +48,8 @@ function sendMail(shareList) {
         "from_name" : shareList.senderName.value,
         "to_email": shareList.emailInput.value,
         "list_name": listName.textContent,
-        "list_items": listItemValues
+        "list_items": listItemValues,
+        "message": shareList.message.value
     })
     .then(
         function(response) {
