@@ -55,6 +55,14 @@
             {% endif %}
         </div>
     </nav>
+    <div id="message-container">
+        <div class="message {% if messages %} message-color {% endif %}">
+          {% for msg in messages %} 
+          {{msg}}
+          <button id="message-close" class="btn-close" aria-label="Close"></button>
+          {% endfor %}
+        </div>
+      </div>
 
     {% block content %}
     <!-- Content Goes here -->

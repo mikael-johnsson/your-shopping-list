@@ -312,6 +312,10 @@ nav h1 {
     background-color: #eed878;
 }
 
+#message-close {
+    float: right;
+}
+
 
 @media (min-width: 768px) {
     /*Nav bar*/

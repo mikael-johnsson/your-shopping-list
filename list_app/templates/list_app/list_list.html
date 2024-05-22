@@ -4,14 +4,6 @@
 
 <!-- list_list.html content starts here -->
 {% if user.is_authenticated %}
-<div id="message-container">
-  <div class="message {% if messages %} message-color {% endif %}">
-    {% for msg in messages %} 
-    {{msg}}
-    <button id="message-close" class="btn-close" aria-label="Close"></button>
-    {% endfor %}
-  </div>
-</div>
 <h3 id="username-heading">{{user}}'s lists</h3>
 
 {% for list in lists %}

@@ -6,14 +6,6 @@
     id="go-back-button"></i></a>
 <div class="container" id="top-container">
   <!-- List name -->
-  <div id="message-container">
-    <div class="message {% if messages %} message-color {% endif %}">
-      {% for msg in messages %} 
-      {{msg}}
-      <button id="message-close" class="btn-close" aria-label="Close"></button>
-      {% endfor %}
-    </div>
-  </div>
   <div class="row centered">
     <h3 class="col-8" id="list-name">{{ list.name }}</h3>
     <button type="submit" class="col-4 btn btn-primary edit-list-buttons" id="name-edit-button">EDIT</button>
