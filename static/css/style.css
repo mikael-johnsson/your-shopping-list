@@ -218,7 +218,7 @@ nav h1 {
 
 .item-button {
     width: 39px;
-    height: 24px;
+    height: 18px;
     font-size: 10px;
     margin: 1px;
     padding: 1px;
@@ -361,7 +361,7 @@ nav h1 {
     }
 
     #top-container {
-        max-width: 400px;
+        max-width: 500px;
     }
 
     #list-name {
@@ -384,6 +384,14 @@ nav h1 {
 
     #created-on {
         font-size: 19px;
+    }
+
+    .item-button {
+        height: 23px;
+    }
+
+    .list-items {
+        font-size: 18px;
     }
 
     .edit-item {
@@ -436,8 +444,8 @@ nav h1 {
 
     .item-button {
         width: 60px;
-        height: 30px;
-        font-size: 12px;
+        height: 23px;
+        font-size: 11px;
         margin: 2px;
         padding: 3px;
     }
