@@ -127,14 +127,27 @@ if(editButtons) {
 //Edit list name
 const editNameButton = document.getElementById("name-edit-button")
 const editNameForm = document.getElementById("list-name-form")
-editNameForm.style.display = "none";
+if(editNameForm){
+    editNameForm.style.display = "none";
+}
 
 function editListName() {
     editNameButton.style.display = "none";
     editNameForm.style.display = "block";
-
 }
 
 if(editNameButton) {
     editNameButton.addEventListener("click", editListName)
+}
+
+// Messages
+let closeButton = document.getElementById("message-close")
+
+function closeMessage(){
+    messageDiv = document.getElementById("message-container")
+    messageDiv.style.display = "none"
+}
+
+if(closeButton){
+    closeButton.addEventListener("click", closeMessage)
 }

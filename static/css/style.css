@@ -312,12 +312,11 @@ nav h1 {
 
 /* Confirmation messages */
 .message {
-    width: 80vh;
+    width: 80%;
     font-size: 15px;
     text-align: center;
     margin: 10px auto 0 auto;
     padding: 3px 15px;
-    
 }
 
 .message-color {
