@@ -6,6 +6,9 @@
     id="go-back-button"></i></a>
 <div class="container" id="top-container">
   <!-- List name -->
+  <div class="message {% if messages %} message-color {% endif %}">
+    {% for msg in messages %} {{msg}} {% endfor %}
+  </div>
   <div class="row centered">
     <h3 class="col-8" id="list-name">{{ list.name }}</h3>
     <button type="submit" class="col-4 btn btn-primary" id="name-edit-button">EDIT</button>
@@ -115,16 +118,6 @@
         </form>
       </div>
     </div>
-  </div>
-</div>
-
-<!--Delete list confirmation toast-->
-<div class="toast-container position-fixed bottom-0 end-0 p-3">
-  <div id="deleteListToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-    <span class="toast-body">
-      You list has been deleted.
-    </span>
-    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
   </div>
 </div>
 

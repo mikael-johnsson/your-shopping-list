@@ -3,6 +3,7 @@ from django.views import generic
 from .models import List, ListItem
 from django.urls import reverse
 from django.db.models import Max
+from django.contrib import messages
 
 
 def list_list(request):
@@ -13,7 +14,8 @@ def list_list(request):
         return render(
             request,
             "list_app/list_list.html",
-            {"lists": lists,}
+            {"lists": lists,
+            }
             )
     else:
         return render(
@@ -49,6 +51,7 @@ def create_list(request, user):
         list.author = request.user
         list.name = request.POST.get('new-list-name')
         list.save()
+        messages.success(request, "Your list is saved")
 
         queryset = List.objects.filter(author = request.user)
         lists = queryset
@@ -64,6 +67,7 @@ def edit_list_name(request, id):
     if request.method == "POST":
         list.name = request.POST.get('new-list-name')
         list.save()
+        messages.success(request, "You have updated list name")
     
     return redirect('list_detail', id=id)
 
@@ -78,6 +82,7 @@ def list_delete(request, id):
     
     if request.method == "POST":
         list.delete()
+        messages.success(request, "You have deleted list")
     
     return render(
         request,
@@ -116,6 +121,7 @@ def create_item(request, id):
         item.list = list
         item.content = request.POST.get("new-item")
         item.save()
+        messages.success(request, "You have added item")
 
     return redirect('list_detail', id=id)
 
@@ -128,6 +134,7 @@ def edit_item(request, id):
     if request.method == "POST":
         item.content = request.POST.get("edit-item")
         item.save()
+        messages.success(request, "You have updated item")
 
     list = item.list
     items = ListItem.objects.all().filter(list=list)
@@ -145,5 +152,6 @@ def delete_item(request, id):
 
     if request.method == "POST":
         item.delete()
+        messages.success(request, "You have deleted item")
     
     return redirect('list_detail', id=list.id)

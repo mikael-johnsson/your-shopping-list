@@ -310,6 +310,21 @@ nav h1 {
     font-weight: 600;
 }
 
+/* Confirmation messages */
+.message {
+    width: 80vh;
+    font-size: 15px;
+    text-align: center;
+    margin: 10px auto 0 auto;
+    padding: 3px 15px;
+    
+}
+
+.message-color {
+    background-color: #eed878;
+}
+
+
 @media (min-width: 768px) {
     /*Nav bar*/
     .navbar {
@@ -378,6 +393,13 @@ nav h1 {
 
     .edit-item {
         width: 120px;
+    }
+
+    /* Confirmation messages */
+    .message {
+        width: 50vh;
+        font-size: 20px;
+        margin: 20px auto 0 auto;
     }
 }
 

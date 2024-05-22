@@ -4,6 +4,9 @@
 
 <!-- list_list.html content starts here -->
 {% if user.is_authenticated %}
+<div class="message {% if messages %} message-color {% endif %}">
+  {% for msg in messages %} {{msg}} {% endfor %}
+</div>
 <h3 id="username-heading">{{user}}'s lists</h3>
 
 {% for list in lists %}
@@ -48,7 +51,7 @@
           <label class="form-label" for="new-list-name">Add a list name:</label>
           <input id="new-list-input" class="col-12" type="text" name="new-list-name" required>
           <button type="button" class="btn btn-secondary btn-long col-6" data-bs-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-primary btn-long col-6">Save new list</button>
+          <button type="submit" class="btn btn-primary btn-long col-6" id="list-modal-button">Save new list</button>
         </form>
       </div>
     </div>
