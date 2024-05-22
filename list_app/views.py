@@ -7,6 +7,11 @@ from django.contrib import messages
 
 
 def list_list(request):
+    """
+    View that renders the home page. If user is logged in the users lists 
+    are in the returned dictionary. 
+    List is a model that creates the users list.
+    """
     if(request.user.is_authenticated):
         queryset = List.objects.filter(author = request.user)
         lists = queryset
@@ -26,9 +31,10 @@ def list_list(request):
 
 def list_detail(request, id):
     """
-    Display and individual :model:`list_app.List`
-    """
-    #more of docstring...
+    View that renders the detailed list view. In the list the user can 
+    see list items. Argument 'id' is the primary key of the list. It 
+    constructs the URL for list_detail.
+    """ 
     if(request.user.is_authenticated):
         queryset = List.objects.all()
         list = get_object_or_404(queryset, id=id)
@@ -48,6 +54,8 @@ def list_detail(request, id):
 
 def create_list(request, user):
     """
+    Function that creates list for the user from the home page. It validates 
+    the name and contructs a new object of List. Redirects back to home page.
     """
     if(request.user.is_authenticated):
         list = List()
@@ -58,7 +66,8 @@ def create_list(request, user):
                 list.save()
                 messages.success(request, "Your list is saved")
             else:
-                messages.error(request, "Name can not be longer than 25 characters")
+                messages.error(request, "Name can not be longer " 
+                                        "than 25 characters")
         else: 
             messages.error(request, "You list needs a real name")
 
@@ -74,7 +83,10 @@ def create_list(request, user):
 
 
 def edit_list_name(request, id):
-
+    """
+    View that updates the list name from the detailed list view. 
+    It validates the name and redirects to the detailed list view.
+    """
     list = List.objects.get(id=id)
     items = ListItem.objects.all().filter(list=list.id)
 
@@ -86,7 +98,8 @@ def edit_list_name(request, id):
                     list.save()
                     messages.success(request, "Your list is updated")
             else:
-                messages.error(request, "Name can not be longer than 25 characters")
+                messages.error(request, "Name can not be longer " 
+                                        "than 25 characters")
             
         return redirect('list_detail', id=id)
     else: 
@@ -98,7 +111,8 @@ def edit_list_name(request, id):
 
 def list_delete(request, id):
     """
-    view to delete list
+    View that deletes the list the user is displaying. 
+    Redirects back to home page.
     """
     if(request.user.is_authenticated):
         queryset = List.objects.filter(author = request.user)
@@ -131,7 +145,9 @@ def save_list(request, id):
 
 def create_item(request, id):
     """
-    View to create item when add item button clicked
+    View to create ListItem. ListItem is a model with Foreing Key connecting 
+    it to a list. The view validates the content and fills out 
+    remaining fields (author and list). Redirects to detailed list view.
     """
     if(request.user.is_authenticated):
         queryset = List.objects.filter(author = request.user)
@@ -150,7 +166,8 @@ def create_item(request, id):
                     item.save()
                     messages.success(request, "You have added item")
                 else:
-                    messages.error(request, "Item can not be longer than 35 characters")
+                    messages.error(request, "Item can not be longer "
+                                            "than 35 characters")
             else:
                 messages.error(request, "Your item need a real name")
         
@@ -162,7 +179,8 @@ def create_item(request, id):
 
 def edit_item(request, id):
     """
-    View to edit item when button clicked 
+    View to edit item content. Validates new item content and saves object.
+    Redirects to detailed list view.
     """
     if(request.user.is_authenticated):
         item = ListItem.objects.all().get(id=id)
@@ -174,7 +192,8 @@ def edit_item(request, id):
                     item.save()
                     messages.success(request, "You have updated item")
                 else:
-                    messages.error(request, "Item can not be longer than 35 characters")
+                    messages.error(request, "Item can not be longer than "
+                                            "35 characters")
             else:
                 messages.error(request, "Your item need a real name")
 
@@ -189,7 +208,7 @@ def edit_item(request, id):
 
 def delete_item(request, id):
     """
-    View to delete item when button clicked
+    View to delete item. Redirects to detailed list view.
     """
     if(request.user.is_authenticated):
         item = ListItem.objects.all().get(id=id)
