@@ -64,10 +64,6 @@
 
   <!-- List buttons -->
   <div class="row button-row">
-    <form action="{% url 'save_list' list.id %}" method="POST">
-      {% csrf_token %}
-      <button type="submit" class="btn btn-primary list-button" id="save-list-button">SAVE</button>
-    </form>
     <button class="btn btn-primary list-button" id="share-list-button">SHARE</button>
     <button class="btn btn-danger list-button" id="delete-list-button">DELETE LIST</button>
   </div>

@@ -129,20 +129,6 @@ def list_delete(request, id):
         request, 
         "403.html")
 
-def save_list(request, id):
-    list = List.objects.get(id=id)
-    items = ListItem.objects.all().filter(list=id)
-    checkedItems = []
-    unCheckedItems = []
-    for item in items:
-        if item.checked == True:
-            checkedItems.append(item)
-        else:
-            unCheckedItems.append(item)
-           
-    
-    return redirect('list_detail', id)
-
 def create_item(request, id):
     """
     View to create ListItem. ListItem is a model with Foreing Key connecting 
