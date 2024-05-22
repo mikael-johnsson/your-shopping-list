@@ -158,27 +158,13 @@ nav h1 {
     font-size: 22px;
 }
 
-#name-edit-button {
-    width: 40px;
-    height: 40px;
-    font-size: 12px;
-    text-align: center;
-    padding-right: 35px;
-}
-
 #list-name-form {
     padding: 0;
 }
 
 #new-list-name {
     width: 80px;
-}
-
-#name-update-button {
-    width: 60px;
-    height: 30px;
-    font-size: 10px;
-    align-self: center;
+    margin: 5px;
 }
 
 #created-on {
@@ -186,10 +172,14 @@ nav h1 {
     display: inline-block;
 }
 
-#edit-list-button {
-    width: 90px;
-    height: 38px;
-    font-size: small;
+#created-on-row {
+    margin-bottom: -6px;
+}
+
+.edit-list-buttons {
+    width: 60px;
+    height: 30px;
+    font-size: 10px;
     padding: 6px 4px;
     margin: 4px;
     text-align: center;
@@ -379,11 +369,14 @@ nav h1 {
         margin: 7px 0;
     }
     
-    #name-edit-button {
-        width: 50px;
-        height: 50px;
-        font-size: 15px;
-        padding-right: 43px;
+    .edit-list-buttons {
+        width: 90px;
+        height: 38px;
+        font-size: 14px;
+    }
+
+    #new-list-name {
+        width: 90px;
     }
 
     #created-on {
