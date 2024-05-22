@@ -84,12 +84,7 @@ def list_delete(request, id):
         list.delete()
         messages.success(request, "You have deleted list")
     
-    return render(
-        request,
-        "list_app/list_list.html",
-        {"list": list,
-        "lists": lists}
-    )
+    return redirect('home')
 
 def save_list(request, id):
     list = List.objects.get(id=id)
