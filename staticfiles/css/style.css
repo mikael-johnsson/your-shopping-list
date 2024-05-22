@@ -1,12 +1,12 @@
 /* General*/
 html {
     height: 100%;
-  }
+}
 
 body {
     background-color: rgb(236, 229, 220);
     min-height: 100%;
-  }
+}
 
 .username-heading {
     text-align: center;
@@ -26,7 +26,6 @@ a {
     margin: 8px;
 }
 
-
 /* Nav bar*/
 .navbar {
     background-color: rgb(45, 175, 214);
@@ -34,7 +33,6 @@ a {
     flex-wrap: nowrap;
     padding: 12px 8px;
 }
-
 
 nav h1 {
     text-transform: uppercase;
@@ -60,7 +58,6 @@ nav h1 {
 }
 
 /* Landing page not logged in user*/
-
 #landing-page-body {
     min-width: 50%;
     max-width: 90%;
@@ -70,13 +67,11 @@ nav h1 {
     box-shadow: 0px 0px 5px 0px #888;
     padding-top: 40px;
     padding-bottom: 40px;
-
 }
 
 #landing-page-container {
     height: 100%;
     background-image: repeating-linear-gradient(#eed878 0px, #eed878 24px, rgba(0, 128, 128, 0.329) 25px);
-    
 }
 
 #landing-page-container h3 {
@@ -102,7 +97,6 @@ nav h1 {
 }
 
 /* List of lists page*/
-
 #username-heading {
     text-align: center;
     margin: 15px 0;
@@ -122,6 +116,11 @@ nav h1 {
     background-image: repeating-linear-gradient(#eed878 0px, #eed878 24px, rgba(0, 128, 128, 0.562) 25px);
 }
 
+#create-list-button {
+    align-items: center;
+}
+
+
 /* Create new list modal */
 .btn-long {
     width: 128px;
@@ -129,11 +128,9 @@ nav h1 {
 
 #new-list-input {
     max-width: 310px;
-    
 }
 
 /* List detail page*/
-
 #top-container {
     max-width: 450px;
     text-align: left;
@@ -161,31 +158,32 @@ nav h1 {
     font-size: 22px;
 }
 
-#name-edit-button {
-    width: 40px;
-    height: 40px;
-    font-size: 12px;
-    text-align: center;
-    padding-right: 35px;
-}
-
 #list-name-form {
     padding: 0;
 }
 
 #new-list-name {
     width: 80px;
-}
-
-#name-update-button {
-    width: 60px;
-    height: 30px;
-    font-size: 10px;
-    align-self: center;
+    margin: 5px;
 }
 
 #created-on {
     font-size: 14px;
+    display: inline-block;
+}
+
+#created-on-row {
+    margin-bottom: -6px;
+}
+
+.edit-list-buttons {
+    width: 60px;
+    height: 30px;
+    font-size: 10px;
+    padding: 6px 4px;
+    margin: 4px;
+    text-align: center;
+    
 }
 
 .list-container {
@@ -205,22 +203,25 @@ nav h1 {
     flex-wrap: nowrap;
 }
 
+.item-right {
+    display: flex;
+    align-items: flex-end;
+}
+
 .item-edit-form {
     text-align: right;
 }
 
 .list-items {
     display: inline-block;
-    width: 115px;
 }
 
 .item-button {
     width: 39px;
-    height: 24px;
+    height: 18px;
     font-size: 10px;
     margin: 1px;
     padding: 1px;
-    
 }
 
 .inline-form {
@@ -268,7 +269,6 @@ nav h1 {
 }
 
 /* Delete list modal*/
-
 .delete-list-form {
     display: inline-block;
 }
@@ -276,6 +276,44 @@ nav h1 {
 .delete-list-button {
     width: 96px;
     font-size: medium;
+}
+
+/* 404, 403, 500 error pages*/
+.error-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 7px;
+}
+
+.error-heading {
+    margin-top: 12px;
+}
+
+.error-message {
+    font-size: 20px;
+}
+
+.error-code {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* Confirmation messages */
+.message {
+    width: 80%;
+    font-size: 15px;
+    text-align: center;
+    margin: 10px auto 0 auto;
+    padding: 3px 15px;
+}
+
+.message-color {
+    background-color: #eed878;
+}
+
+#message-close {
+    float: right;
 }
 
 
@@ -293,7 +331,6 @@ nav h1 {
     }
 
     /* Landing page not logged in user*/
-
     #landing-page-body {
         margin: 40px auto;
     }
@@ -318,15 +355,13 @@ nav h1 {
     }
 
     /* List detail page*/
-    
     #go-back-button {
         font-size: 40px;
-        margin: 40px 0 0 40px;
-        
+        margin: 30px 0 0 40px;
     }
 
     #top-container {
-        max-width: 400px;
+        max-width: 500px;
     }
 
     #list-name {
@@ -335,31 +370,44 @@ nav h1 {
 
     .items-li-container {
         margin: 7px 0;
-
     }
     
-    #name-edit-button {
-        width: 50px;
-        height: 50px;
-        font-size: 15px;
-        padding-right: 43px;
+    .edit-list-buttons {
+        width: 90px;
+        height: 38px;
+        font-size: 14px;
+    }
+
+    #new-list-name {
+        width: 90px;
     }
 
     #created-on {
         font-size: 19px;
     }
 
+    .item-button {
+        height: 23px;
+    }
+
+    .list-items {
+        font-size: 18px;
+    }
+
     .edit-item {
         width: 120px;
     }
 
-   
-
+    /* Confirmation messages */
+    .message {
+        width: 50vh;
+        font-size: 20px;
+        margin: 20px auto 0 auto;
+    }
 }
 
 @media (min-width: 992px) {
     /*Nav bar*/
-
     .navbar {
         padding: 20px 50px;
     }
@@ -387,8 +435,7 @@ nav h1 {
 
     #go-back-button {
         font-size: 45px;
-        margin: 50px 0 0 70px;
-        
+        margin: 30px 0 0 70px;
     }
 
     .list-items {
@@ -397,8 +444,8 @@ nav h1 {
 
     .item-button {
         width: 60px;
-        height: 30px;
-        font-size: 12px;
+        height: 23px;
+        font-size: 11px;
         margin: 2px;
         padding: 3px;
     }
