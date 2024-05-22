@@ -54,8 +54,11 @@ def create_list(request, user):
         list.author = request.user
         list.name = request.POST.get('new-list-name')
         if list.name.isspace() == False:
-            list.save()
-            messages.success(request, "Your list is saved")
+            if len(list.name) <= 25:
+                list.save()
+                messages.success(request, "Your list is saved")
+            else:
+                messages.error(request, "Name can not be longer than 25 characters")
         else: 
             messages.error(request, "You list needs a real name")
 
@@ -79,10 +82,11 @@ def edit_list_name(request, id):
         if request.method == "POST":
             list.name = request.POST.get('new-list-name')
             if list.name.isspace() == False:
-                list.save()
-                messages.success(request, "Your list is updated")
-            else: 
-                messages.error(request, "You list needs a real name")
+                if len(list.name) <= 25:
+                    list.save()
+                    messages.success(request, "Your list is updated")
+            else:
+                messages.error(request, "Name can not be longer than 25 characters")
             
         return redirect('list_detail', id=id)
     else: 
@@ -142,8 +146,11 @@ def create_item(request, id):
             item.list = list
             item.content = request.POST.get("new-item")
             if item.content.isspace() == False:
-                item.save()
-                messages.success(request, "You have added item")
+                if len(item.content) <= 35:
+                    item.save()
+                    messages.success(request, "You have added item")
+                else:
+                    messages.error(request, "Item can not be longer than 35 characters")
             else:
                 messages.error(request, "Your item need a real name")
         
@@ -163,8 +170,11 @@ def edit_item(request, id):
         if request.method == "POST":
             item.content = request.POST.get("edit-item")
             if item.content.isspace() == False:
-                item.save()
-                messages.success(request, "You have updated item")
+                if len(item.content) <= 35:
+                    item.save()
+                    messages.success(request, "You have updated item")
+                else:
+                    messages.error(request, "Item can not be longer than 35 characters")
             else:
                 messages.error(request, "Your item need a real name")
 
