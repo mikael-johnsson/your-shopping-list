@@ -24,23 +24,26 @@ def list_list(request):
             )
 
 
-
 def list_detail(request, id):
     """
     Display and individual :model:`list_app.List`
     """
     #more of docstring...
-
-    queryset = List.objects.all()
-    list = get_object_or_404(queryset, id=id)
-    items = ListItem.objects.all().filter(list=list.id)
-    
-    return render(
-        request,
-        "list_app/list_detail.html",
-        {"list": list,
-        "items": items}
-    )
+    if(request.user.is_authenticated):
+        queryset = List.objects.all()
+        list = get_object_or_404(queryset, id=id)
+        items = ListItem.objects.all().filter(list=list.id)
+        
+        return render(
+            request,
+            "list_app/list_detail.html",
+            {"list": list,
+            "items": items}
+        )
+    else:
+        return render(
+            request, 
+            "403.html")
 
 
 def create_list(request, user):
@@ -56,7 +59,12 @@ def create_list(request, user):
         queryset = List.objects.filter(author = request.user)
         lists = queryset
 
-    return redirect('home')
+        return redirect('home')
+    
+    else:
+        return render(
+            request, 
+            "403.html")
 
 
 def edit_list_name(request, id):
@@ -64,27 +72,38 @@ def edit_list_name(request, id):
     list = List.objects.get(id=id)
     items = ListItem.objects.all().filter(list=list.id)
 
-    if request.method == "POST":
-        list.name = request.POST.get('new-list-name')
-        list.save()
-        messages.success(request, "You have updated list name")
-    
-    return redirect('list_detail', id=id)
+    if(request.user.is_authenticated):
+        if request.method == "POST":
+            list.name = request.POST.get('new-list-name')
+            list.save()
+            messages.success(request, "You have updated list name")
+            
+        return redirect('list_detail', id=id)
+    else: 
+        return render(
+        request, 
+        "403.html")
+
 
 
 def list_delete(request, id):
     """
     view to delete list
     """
-    queryset = List.objects.filter(author = request.user)
-    lists = queryset
-    list = queryset.filter(id=id)
-    
-    if request.method == "POST":
-        list.delete()
-        messages.success(request, "You have deleted list")
-    
-    return redirect('home')
+    if(request.user.is_authenticated):
+        queryset = List.objects.filter(author = request.user)
+        lists = queryset
+        list = queryset.filter(id=id)
+        
+        if request.method == "POST":
+            list.delete()
+            messages.success(request, "You have deleted list")
+        
+        return redirect('home')
+    else: 
+        return render(
+        request, 
+        "403.html")
 
 def save_list(request, id):
     list = List.objects.get(id=id)
@@ -104,49 +123,64 @@ def create_item(request, id):
     """
     View to create item when add item button clicked
     """
-    queryset = List.objects.filter(author = request.user)
-    lists = queryset
-    list = queryset.get(id=id)
+    if(request.user.is_authenticated):
+        queryset = List.objects.filter(author = request.user)
+        lists = queryset
+        list = queryset.get(id=id)
 
-    items = ListItem.objects.all().filter(list=id)
+        items = ListItem.objects.all().filter(list=id)
 
-    if request.method == "POST":
-        item = ListItem()
-        item.author = request.user
-        item.list = list
-        item.content = request.POST.get("new-item")
-        item.save()
-        messages.success(request, "You have added item")
-
-    return redirect('list_detail', id=id)
+        if request.method == "POST":
+            item = ListItem()
+            item.author = request.user
+            item.list = list
+            item.content = request.POST.get("new-item")
+            item.save()
+            messages.success(request, "You have added item")
+        
+        return redirect('list_detail', id=id)
+    else: 
+        return render(
+        request, 
+        "403.html")
 
 def edit_item(request, id):
     """
     View to edit item when button clicked 
     """
-    item = ListItem.objects.all().get(id=id)
+    if(request.user.is_authenticated):
+        item = ListItem.objects.all().get(id=id)
 
-    if request.method == "POST":
-        item.content = request.POST.get("edit-item")
-        item.save()
-        messages.success(request, "You have updated item")
+        if request.method == "POST":
+            item.content = request.POST.get("edit-item")
+            item.save()
+            messages.success(request, "You have updated item")
 
-    list = item.list
-    items = ListItem.objects.all().filter(list=list)
+        list = item.list
+        items = ListItem.objects.all().filter(list=list)
 
-    return redirect('list_detail', id=list.id)
+        return redirect('list_detail', id=list.id)
+    else: 
+        return render(
+        request, 
+        "403.html")
 
 def delete_item(request, id):
     """
     View to delete item when button clicked
     """
-    item = ListItem.objects.all().get(id=id)
-    list = item.list
-    items = ListItem.objects.all().filter(list=list)
-    
+    if(request.user.is_authenticated):
+        item = ListItem.objects.all().get(id=id)
+        list = item.list
+        items = ListItem.objects.all().filter(list=list)
+        
 
-    if request.method == "POST":
-        item.delete()
-        messages.success(request, "You have deleted item")
-    
-    return redirect('list_detail', id=list.id)
+        if request.method == "POST":
+            item.delete()
+            messages.success(request, "You have deleted item")
+        
+        return redirect('list_detail', id=list.id)
+    else: 
+        return render(
+        request, 
+        "403.html")
