@@ -53,8 +53,11 @@ def create_list(request, user):
         list = List()
         list.author = request.user
         list.name = request.POST.get('new-list-name')
-        list.save()
-        messages.success(request, "Your list is saved")
+        if list.name.isspace() == False:
+            list.save()
+            messages.success(request, "Your list is saved")
+        else: 
+            messages.error(request, "You list needs a real name")
 
         queryset = List.objects.filter(author = request.user)
         lists = queryset
@@ -75,8 +78,11 @@ def edit_list_name(request, id):
     if(request.user.is_authenticated):
         if request.method == "POST":
             list.name = request.POST.get('new-list-name')
-            list.save()
-            messages.success(request, "You have updated list name")
+            if list.name.isspace() == False:
+                list.save()
+                messages.success(request, "Your list is updated")
+            else: 
+                messages.error(request, "You list needs a real name")
             
         return redirect('list_detail', id=id)
     else: 
@@ -135,8 +141,11 @@ def create_item(request, id):
             item.author = request.user
             item.list = list
             item.content = request.POST.get("new-item")
-            item.save()
-            messages.success(request, "You have added item")
+            if item.content.isspace() == False:
+                item.save()
+                messages.success(request, "You have added item")
+            else:
+                messages.error(request, "Your item need a real name")
         
         return redirect('list_detail', id=id)
     else: 
@@ -153,8 +162,11 @@ def edit_item(request, id):
 
         if request.method == "POST":
             item.content = request.POST.get("edit-item")
-            item.save()
-            messages.success(request, "You have updated item")
+            if item.content.isspace() == False:
+                item.save()
+                messages.success(request, "You have updated item")
+            else:
+                messages.error(request, "Your item need a real name")
 
         list = item.list
         items = ListItem.objects.all().filter(list=list)
