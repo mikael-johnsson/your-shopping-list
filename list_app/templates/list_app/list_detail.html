@@ -30,7 +30,7 @@
         <li class="items-li-container" name="list-item-top" id="{{ item.id }}">
           <div class="item-container">
             <div class="item-left">
-              <span class="list-items"><input name="item-checkbox" type="checkbox" {% if item.checked == True %} checked {% endif %}> {{ item.content }}</span>
+              <span class="list-items">{{ item.content }}</span>
             </div>
             <div class="item-right">
               <button type="button" class="{{item.id}} item-edit-button item-button btn btn-primary">EDIT</button>
