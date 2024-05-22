@@ -4,6 +4,10 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 class List(models.Model):
+    """
+    Model that creates a List object. List object is connected through foreign 
+    key to Django User model. ListItem connects with List through foreign key.
+    """
     name = models.CharField(max_length=25, default="New Shopping List")
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="lists"
@@ -18,6 +22,10 @@ class List(models.Model):
         return f"Name of list: {self.name}"
 
 class ListItem(models.Model):
+    """
+    Model that creates list items. ListItem object is connected through foreign 
+    key to Django User model and List object.
+    """
     list = models.ForeignKey(
         List, on_delete=models.CASCADE, related_name="list_items"
     )
