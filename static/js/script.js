@@ -85,14 +85,22 @@ for (let form of updateForms){
     form.style.display = "none"
 }
 
-//Display item buttons
+//Toggle item buttons
 function showItemButtons(){
     for (let button of editButtons){
-        button.style.display = "block"
+        if(button.style.display === "none"){
+            button.style.display = "block"
+        } else {
+            button.style.display = "none"
+        }
     }
 
     for (let button of deleteButtons){
-        button.style.display = "block"
+        if(button.style.display === "none"){
+            button.style.display = "block"
+        } else {
+            button.style.display = "none"
+        }
     }
 }
 
