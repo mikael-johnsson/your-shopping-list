@@ -1,5 +1,5 @@
 # Your Shopping List
-*Your Shopping List* is the place to go if you want a quick and easy way to create a shopping list while also have the abilty to keep track of what you already bought, and share that list someone.
+*Your Shopping List* is the place to go if you want a quick and easy way to create a shopping list while on the go! You can: edit it, delete it or share it with a friend!
 
 This is a project created during the Code Institute flag, being the portfolio project 4. It is for learning purposes only.
 
@@ -43,6 +43,14 @@ This application needs to be fast to use. It is competing with your phones notes
 
 The USP of this site is to have a clean look which gives the user a clear oversite and easy to use features you can not find at it's competitors.
 ### Colour Scheme
+The colours chosen for this site are contrasting eachother and each serves their own purpose.
+
+- Off-white / #ECE5DC: used as a general background colour
+- Ocean blue / #2DAFD6: used as the background colour of the navigation bar
+- Notebook yellow / #EED878: used as the background of the lists and the landing page information. Chosen to imitate the colour of a notebook.
+- Teal / #008080: used for the lines in the notebook imitation.
+
+![Image of the colour pallette used](static/images/documentation/color-pallette-YSL.jpg)
 ### Font
 ## Project Planning
 This project is intended to help with the everyday life mission to go to the grocery store. With a working shopping list system you can make your shopping more efficient and be sure to come back home with the items you needed. With a sharing feature a partner, friend or family member can do the shopping the site user planned and in that way be of service in sickness and in health.
