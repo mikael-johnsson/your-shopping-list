@@ -108,8 +108,39 @@ The site was developed mobile first. The desktop wireframes are therefor bigger 
 ![Wireframe for the share list feature on desktop](static/images/documentation/Desktop_share_list.png)
 
 ### ERDs
+This site uses three models: Django's *User* model, a *list* model and a *list item* model. 
+
+Below is the Entity Relationship Diagram:
+
+![Image of the sites ERD](static/images/documentation/your-shopping-list-ERD.png)
 
 
+**User**
+Django's User model is a excellent way to create and handle users at your site. Combined with the AllAuth framework, a lot of the work to create a functioning site with user is already done. 
+
+The default fields for the AllAuth sign up page is *username*, *email* and *password.* To differentiate between regular users and admin accounts the *Superuser* field was added to the ERD. These are not all of the Django User model fields, but those used in this site.
+
+**List**
+The List model is a custom model. It has a primary key of Djangos default id field, that increments automatically. That id is also what builds the detailed list views URL. The author field is a foreign key that connects with the user model. It is mostly used for authentification.
+
+**List item**
+The List item model is what creates what you actually see in the lists. It also has a primary key of the default id field. It also connects to the user model via the author field. The List model has a second foreign key connecting it to the List model. This is to make sure that the correct items are displayed when opening a list.
+
+## Features
+### CRUD functionality
+This site contains three different kind of objects: User, List and List item.
+
+As a logged in user you can handle List and List items. With simple buttons and forms you can create, read, update and delete your lists and list items.
+
+As a not logged in user you are only allowed to create a user. Remaining handling features of the user object is limited to the superusers through the admin page. As of now there is no way for a regular user to update username, change password or delete account.
+
+### Feature showcase
+#### Navbar
+#### Sign up / Login / Logout
+#### List menu
+#### List
+#### Error pages
+### Future features
 
 
 
