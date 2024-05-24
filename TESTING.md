@@ -69,4 +69,68 @@ Lighthouse is a devtools tool to measure performance, accessibility, best practi
 With a few 100s in the top and a few 87 as a lowest, the average value is 94.5. I deem it acceptable with some work to be done with the accessibility of the site.
 
 ## Manual Testing
+**Feature testing**
+
+|Feature|Expected outcome|Test performed|Result|
+|-|-|-|-|
+|*When not logged in*||||
+|Navbar - *SIGN UP*|Redirect to Sign Up page|Clicked|As expected|
+|Navbar - *LOGIN*|Redirect to Login page|Clicked|As expected|
+|Sign Up page - sign in link|Redirect to Login page|Clicked|As expected|
+|Sign up page - sign up button|Redirect to List menu (if entered correct input)|Clicked|As expected|
+|Login page - sign up link|Redirect to Sign Up page|Clicked|As expected|
+|Login page - login button|Redirect to List menu page (if correct account details entered)|Clicked|As expected|
+|*When logged in*||||
+|List menu page - create new list modal|Create new list modal to pop up|Clicked|As expexted|
+|List menu page - create new list|Modal to stop displaying and new list with chosen name is in list menu|Input a valid name and clicked Save new list|As expected|
+|List menu page - list|Redirect to correct list|Clicked|As expexted|
+|List menu page - logout|Redirect to logout page|Clicked|As expected|
+|List page - edit list name|Hide edit button, display input field and Update button|Clicked|As expected|
+|List page - update list name|List name to update|Enter a valid value and clicked Update button|As expected|
+|List page - created on|Correct date and time of list creation showin|N/A|As expected|
+|List page - edit list|Display Edit button and Delete button next to each item|Clicked Edit List button|As expected|
+|List page - edit item|Hide Edit button and Delete button to the chosen item, display input field and Update button|Clicked Edit button|As expected|
+|List page - update item|Item content to update|Entered a valid value and clicked update|As expected|
+|List page - delete item|Item to be deleted|Clicked Delete button to the chosen item|As expected|
+|List page - add item|Item to be added|Input a valid value and clicked add|As expected|
+|List page - share list modal|Share list modal to pop up|Clicked Share|As expected|
+|List page - share list|Send list (name, items) and message to chosen receiver|Input values in form, clicked Send list|As expected|
+|List page - delete list modal|Delete list modal to pop up|Clicked Delete List|As expected|
+|List page - delete list|List to be deleted, redirect to List menu|Confirm deletion|As expected|
+|List page - Go back button|Redirect to List menu|Clicked|As expected|
+
+
+**Input testing**
+|Input field|Test|Outcome|Result|
+|-|-|-|-|
+|*Signup page*||||
+|Username|only pressing enter|Error message shows|Valid|
+|Username|only input blankspace|Okay|Invalid|
+|Password|not following displayed password rules|Error message shows|Valid|
+|*Login page*||||
+|Username|only pressing enter|Error message shows|Valid|
+|Password|only pressing enter|Error message shows|Valid|
+|Password|entering incorrect password|Error message shows|Valid|
+|*List menu page*||||
+|Create new list modal|only pressing enter|Error message shows||
+|Create new list modal|only entering blankspace|Error message shows, stop displaying modal||
+|Create new list modal|entering name over 25 characters|Error message shows, stop displaying modal||
+|*List page*||||
+|Edit list name|only pressing enter|Error message shows||
+|Edit list name|only entering blankspace|Error message shows||
+|Edit list name|entering name over 25 characters|Error message shows||
+|Edit item content|only pressing enter|Error message shows||
+|Edit item content|only entering blankspace|Error message shows||
+|Edit item content|entering value over 35 characters|Error message shows||
+|*Share list modal*||||
+|Name field|only pressing enter|Error message shows||
+|Email field|only pressing enter|Error message shows||
+|Email field|only entering blankspace|Error message shows||
+
+
+
+**Messages**
+
+
+
 ## Bugs
