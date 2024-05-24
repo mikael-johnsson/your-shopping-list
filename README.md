@@ -179,6 +179,23 @@ If an error were to appear, the site has a 404 / 403 / 500 page ready to go. For
 ![Image of the sites 404 page](static/images/documentation/404-page.jpg)
 
 ### Future features
+There are a lot of features that were considered for this site that would make it a lot better. Time has, as always, been a factor in the development and it wasn't sufficient to create and implement these features.
+
+#### Checkbox
+For a long time during the development, a checked field was part of the List item model. The idea was to allow the user to check a checkbox when an item had been bought / put in the basket when at the store. That data would then be stored until the next time the list were opened. 
+
+Lack of understanding how to connect the input checkbox element with the checked field in the model put the feature on hold for now.
+
+#### Visual examples in home page
+
+To give a new user a better picture of how the site looks and works, images or real examples of the list menu and detailed list could be displayed on the home page.
+
+#### Improved email feature
+As of now, the email feature gives the receiver the name of the list, the list items and a custom message. Ideally the receiver would also get the notebook look that is associated with the site, in the email. The chosen email service, EmailJS, seems to lack that feature as of now.
+
+#### A shop price scanner
+A feature that would really take the site to the next level would be the shop price scanner. The idea would be that the user inserts a list item (for example "Granny Smith apples") and the site scans the local grocery stores and suggests a store to visit depending on that stores price of the specific item. This would of course require an item library and a function to scan stores websites.
+
 
 
 
