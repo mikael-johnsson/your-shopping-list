@@ -27,27 +27,27 @@
     <div class="list-container">
       <ul>
         {% for item in items %}
-        <li class="items-li-container" name="list-item-top" id="{{ item.id }}">
+        <li class="items-li-container" id="{{ item.id }}">
           <div class="item-container">
             <div class="item-left">
               <span class="list-items">{{ item.content }}</span>
             </div>
             <div class="item-right">
               <button type="button" class="{{item.id}} item-edit-button item-button btn btn-primary">EDIT</button>
-              <span>
+              <div>
                 <form action="{% url 'delete_item' item.id %}" class="inline-form" method="POST">
                   {% csrf_token %}
                   <button type="submit" class="delete-item-button item-button btn btn-danger">DELETE</button>
                 </form>
-              </span>
+              </div>
             </div>
-            <span class="{{item.id}} item-edit-form">
+            <div class="{{item.id}} item-edit-form">
               <form action="{% url 'edit_item' item.id %}" class="inline-form" method="POST">
                 {% csrf_token %}
                 <input type="text" name="edit-item" class="edit-item" required>
                 <button type="submit" class="item-button btn btn-primary">UPDATE</button>
               </form>
-            </span>
+            </div>
           </div>
         </li>
         {% endfor %}
@@ -101,9 +101,9 @@
         <form class="row" action="{% url 'list_detail' list.id %}" onsubmit="return sendMail(this);">
           {% csrf_token %}
           <label class="form-label" for="senderName">Your name:</label>
-          <input type="text" name="senderName" required>
+          <input type="text" name="senderName" id="senderName" required>
           <label class="form-label" for="emailInput">Send list to:</label>
-          <input type="email" name="emailInput" required>
+          <input type="email" name="emailInput" id="emailInput" required>
           <label class="form-label" for="message">Your message:</label>
           <textarea rows="4" name="message" id="message"></textarea>
           <button type="button" class="btn btn-secondary share-list-button" data-bs-dismiss="modal">Cancel</button>
