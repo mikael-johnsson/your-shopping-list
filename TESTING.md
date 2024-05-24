@@ -19,8 +19,13 @@ Find the README [here](README.md).
 
 ## Automated Testing
 ### W3C HTML
+All of this sites html pages have been validated through W3C validator. It came back with one warning: it suggests the logo in the navbar should not be an h1 element. As a minor warning I have chosen to disregard it.
+
+![Image of the W3C html validator varning](static/images/documentation/home-page-warning.jpg)
+
 ### W3C CSS
-### JS
+This project has one CSS file. It went through the W3C CSS validator and came back with no warnings or errors.
+### JSHint
 ### CI Python Linter
 ### Lighthouse
 ## Manual Testing

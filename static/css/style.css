@@ -121,10 +121,6 @@ nav h1 {
     width: 132px;
 }
 
-#new-list-name {
-    max-width: 310px;
-}
-
 /* List detail page*/
 #top-container {
     max-width: 450px;
@@ -157,7 +153,8 @@ nav h1 {
 }
 
 #new-list-name {
-    width: 80px;
+    width: 138px;
+    max-width: 310px;
     margin: 5px;
 }
 
@@ -370,10 +367,6 @@ nav h1 {
         width: 90px;
         height: 38px;
         font-size: 14px;
-    }
-
-    #new-list-name {
-        width: 90px;
     }
 
     #created-on {

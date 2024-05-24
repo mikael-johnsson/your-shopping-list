@@ -81,7 +81,7 @@ function showNewListModal() {
 
 newListModalButton = document.getElementById("create-list-button");
 if (newListModalButton) {
-    newListModalButton.addEventListener("click", showNewListModal)
+    newListModalButton.addEventListener("click", showNewListModal);
 }
 
 // Edit items section//
