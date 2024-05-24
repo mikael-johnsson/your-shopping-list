@@ -60,7 +60,7 @@ def create_list(request, user):
         list = List()
         list.author = request.user
         list.name = request.POST.get('new-list-name')
-        if list.name.isspace() == False:
+        if list.name.isspace() != True:
             if len(list.name) <= 25:
                 list.save()
                 messages.success(request, "Your list is saved")
@@ -92,7 +92,7 @@ def edit_list_name(request, id):
     if request.user.is_authenticated:
         if request.method == "POST":
             list.name = request.POST.get('new-list-name')
-            if list.name.isspace() == False:
+            if list.name.isspace() != True:
                 if len(list.name) <= 25:
                     list.save()
                     messages.success(request, "Your list is updated")
@@ -146,7 +146,7 @@ def create_item(request, id):
             item.author = request.user
             item.list = list
             item.content = request.POST.get("new-item")
-            if item.content.isspace() == False:
+            if item.content.isspace() != True:
                 if len(item.content) <= 35:
                     item.save()
                     messages.success(request, "You have added item")
@@ -173,7 +173,7 @@ def edit_item(request, id):
 
         if request.method == "POST":
             item.content = request.POST.get("edit-item")
-            if item.content.isspace() == False:
+            if item.content.isspace() != True:
                 if len(item.content) <= 35:
                     item.save()
                     messages.success(request, "You have updated item")
