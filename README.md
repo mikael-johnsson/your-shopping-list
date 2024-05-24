@@ -149,6 +149,13 @@ The Sign Up, Login and Logout pages all inherits the navbar from the rest of the
 ![Image of the sites login page](static/images/documentation/login-page.jpg)
 ![Image of the sites logout page](static/images/documentation/logout-page.jpg)
 
+#### Home page
+The home page is what a non logged in user sees when entering the site. Back end wise this is the same page as the List menu.
+
+A short text quickly explains to the user what the site can do and why it is useful.
+
+![Image of the sites home page](static/images/documentation/home-page.jpg)
+
 #### List menu
 The list menu displays the user's lists with a notebook like background. The name of the appears to be on one of the lines in the notebook. At the bottom of the menu the user finds the "Create New List"-button. That opens a modal in which the user can submit a name to the list.
 
@@ -167,6 +174,9 @@ To share and delete the list - modals pop up and the user can enter the informat
 ![Image of the share list modal](static/images/documentation/share-list-modal.jpg)
 ![Image of the delete list modal](static/images/documentation/delete-list-modal.jpg)
 #### Error pages
+If an error were to appear, the site has a 404 / 403 / 500 page ready to go. For consistency they all look the same with slight differences in the displayed message and error code. A link takes the user back to the home page.
+
+![Image of the sites 404 page](static/images/documentation/404-page.jpg)
 
 ### Future features
 
