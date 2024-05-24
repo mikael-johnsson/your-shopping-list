@@ -260,12 +260,10 @@ These are instructions how to fork the app from Github:
 6. Create workspace via chosen clone way from step 4
 
 
-
-
-
-
-
 ## Credits
-The log in/log out/sign up code is from the CI Blog Walkthrough
-The toast js is from Bootstrap
-the notebook look is from https://www.codesdope.com/blog/article/getting-notebook-paper-effect-with-css/
+### Credits
+The log in/log out/sign up code is from Django AllAuth library and inplemented as it was in the Code Institute Blog Walkthrough.
+
+The notebook look is from [here](https://www.codesdope.com/blog/article/getting-notebook-paper-effect-with-css/).
+### Acknowledgments
+A big thank you to my mentor Graeme Taylor for inspiration and encouragement.
