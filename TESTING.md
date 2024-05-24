@@ -26,7 +26,16 @@ All of this sites html pages have been validated through W3C validator. It came 
 ### W3C CSS
 This project has one CSS file. It went through the W3C CSS validator and came back with no warnings or errors.
 ### JSHint
+This project has on javascript file. It went through JSHint and came back with some warnings.
+- It warns that the bootstrap variable is undefined
+- It warns that the emailjs variable is undefined
+- It warns that the sendMail variable is unused
+
+The bootstrap and emailjs variable are important to the functionality of the site and exist due to instructions from bootstrap respective emailjs. I will disregard these warnings due to eventual errors to functionality.
+
+sendMail is a function written properly, why this is caught by JSHint I do not know. I will disregard this warning.
 ### CI Python Linter
+
 ### Lighthouse
 ## Manual Testing
 ## Bugs

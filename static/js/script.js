@@ -79,7 +79,7 @@ function showNewListModal() {
 }
 
 
-newListModalButton = document.getElementById("create-list-button");
+let newListModalButton = document.getElementById("create-list-button");
 if (newListModalButton) {
     newListModalButton.addEventListener("click", showNewListModal);
 }
@@ -185,7 +185,7 @@ let closeButton = document.getElementById("message-close");
  * the Close Message button.
  */
 function closeMessage() {
-    messageDiv = document.getElementById("message-container");
+    let messageDiv = document.getElementById("message-container");
     messageDiv.style.display = "none";
 }
 
