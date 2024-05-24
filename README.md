@@ -179,6 +179,8 @@ The site uses the Django Admin page. From there a superuser can use CRUD functio
 
 ![Image of the sites admin page](static/images/documentation/admin-page.jpg)
 
+#### Messages
+
 ### Future features
 There are a lot of features that were considered for this site that would make it a lot better. Time has, as always, been a factor in the development and it wasn't sufficient to create and implement these features.
 

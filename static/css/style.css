@@ -9,11 +9,6 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-.username-heading {
-    text-align: center;
-    margin: 15px 0;
-}
-
 a {
     text-decoration: none;
     text-transform: uppercase;
@@ -121,7 +116,6 @@ nav h1 {
     align-items: center;
 }
 
-
 /* Create new list modal */
 .btn-long {
     width: 132px;
@@ -147,7 +141,6 @@ nav h1 {
     padding: 0;
     flex-shrink: 2;
     text-align: center;
-    
 }
 
 #go-back-button {
@@ -184,7 +177,6 @@ nav h1 {
     padding: 6px 4px;
     margin: 4px;
     text-align: center;
-    
 }
 
 .list-container {
@@ -323,6 +315,7 @@ nav h1 {
     .navbar {
         padding: 15px 20px;
     }
+
     .nav-item {
         font-size: x-large;
     }
@@ -372,7 +365,7 @@ nav h1 {
     .items-li-container {
         margin: 7px 0;
     }
-    
+
     .edit-list-buttons {
         width: 90px;
         height: 38px;
@@ -408,6 +401,7 @@ nav h1 {
 }
 
 @media (min-width: 992px) {
+
     /*Nav bar*/
     .navbar {
         padding: 20px 50px;

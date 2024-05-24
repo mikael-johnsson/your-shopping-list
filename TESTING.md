@@ -18,6 +18,10 @@ Find the README [here](README.md).
 |As an admin I can delete users so that inactive users don’t take up space in the database|A Superuser can go to the admin page, log in and edit and delete users|
 
 ## Automated Testing
-### Linter Validation
+### W3C HTML
+### W3C CSS
+### JS
+### CI Python Linter
+### Lighthouse
 ## Manual Testing
 ## Bugs

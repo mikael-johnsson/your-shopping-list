@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-
 <!-- list_list.html content starts here -->
 {% if user.is_authenticated %}
 <h3 id="username-heading">{{user}}'s lists</h3>
@@ -26,7 +25,8 @@
   <div id="landing-page-container">
     <h3>Time to go shopping soon?</h3>
     <p>...then you have come to the right place! At <em>Your Shopping List</em> you can create lists for each grocery
-      store run. Easy to use and allows you to keep track of several lists at the same time.<br><br>Not in the mood for shopping?
+      store run. Easy to use and allows you to keep track of several lists at the same time.<br><br>Not in the mood for
+      shopping?
       <br><br>Send the list
       to a partner or friend! I am sure they can do it!</p>
   </div>
@@ -53,6 +53,5 @@
     </div>
   </div>
 </div>
-
 <!-- list_list.html content ends here -->
 {% endblock %}
