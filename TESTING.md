@@ -2,7 +2,7 @@
 
 This is the testing for the site *Your Shopping List*.
 
-Link to live site.
+Link to live site [here]()
 Find the README [here](README.md).
 ## User Story testing
 
@@ -153,4 +153,7 @@ After meticulous testing, it is clear that the correct message appear after the 
 ### Fixed bugs
 - CSS did not load properly. This was fixed after a conversation with a CI tutor, the problem was that debug was set to false (which can affect the ability to read CSS).
 - Modal not showing. When implementing Bootstrap modals, they failed to show. This was fixed after a conversation with a CI tutor, the problem was that Bootstrap had changed the syntax of how to display a modal.
+
+### Flaws
+- Early on in development a mistake was made. Before the database URL had been moved to the env.py file (that is secret and not pushed to Github) the code was pushed to github. That is not ideal but deemed to be to big of a problem to handle during this time.
 
