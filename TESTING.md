@@ -35,7 +35,7 @@ The bootstrap and emailjs variable are important to the functionality of the sit
 
 sendMail is a function written properly, why this is caught by JSHint I do not know. I will disregard this warning.
 ### CI Python Linter
-
+All of the python files were run through the CI Python Linter. It came back with no errors.
 ### Lighthouse
 ## Manual Testing
 ## Bugs
