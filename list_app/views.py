@@ -68,7 +68,7 @@ def create_list(request, user):
                 messages.error(request, "Name can not be longer "
                                         "than 25 characters")
         else:
-            messages.error(request, "You list needs a real name")
+            messages.error(request, "Your list needs a real name")
 
         queryset = List.objects.filter(author=request.user)
         lists = queryset
@@ -96,9 +96,11 @@ def edit_list_name(request, id):
                 if len(list.name) <= 25:
                     list.save()
                     messages.success(request, "Your list is updated")
-            else:
-                messages.error(request, "Name can not be longer "
+                else:
+                    messages.error(request, "Name can not be longer "
                                         "than 25 characters")
+            else:
+                messages.error(request, "Your list needs a real name")
 
         return redirect('list_detail', id=id)
     else:
