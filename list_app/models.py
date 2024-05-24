@@ -3,9 +3,10 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
+
 class List(models.Model):
     """
-    Model that creates a List object. List object is connected through foreign 
+    Model that creates a List object. List object is connected through foreign
     key to Django User model. ListItem connects with List through foreign key.
     """
     name = models.CharField(max_length=25, default="New Shopping List")
@@ -17,13 +18,14 @@ class List(models.Model):
 
     class Meta:
         ordering = ["-created_on"]
-    
+
     def __str__(self):
         return f"Name of list: {self.name}"
 
+
 class ListItem(models.Model):
     """
-    Model that creates list items. ListItem object is connected through foreign 
+    Model that creates list items. ListItem object is connected through foreign
     key to Django User model and List object.
     """
     list = models.ForeignKey(
@@ -37,6 +39,6 @@ class ListItem(models.Model):
 
     class Meta:
         ordering = ["created_on"]
-    
+
     def __str__(self):
         return f"Item: {self.content}"
