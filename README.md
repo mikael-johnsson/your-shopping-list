@@ -73,6 +73,8 @@ This project is intended to help with the everyday life mission to go to the gro
 ### Agile Methods
 This project was planned with agile methods. As some features depended on others to be built, the obvious way was to start with the most fundamental features and user stories first and work upwards.
 
+Only on iteration has been completed and future features are planned to take place in the second iteration.
+
 ### MoSCoW Method
 The issues created for this site were labeled with the use of the MoSCoW method. That divides the labels into:
 
