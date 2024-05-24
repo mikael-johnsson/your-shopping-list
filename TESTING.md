@@ -2,7 +2,7 @@
 
 This is the testing for the site *Your Shopping List*.
 
-Link to live site [here]()
+Link to live site [here](https://your-shopping-list-mj-f192e4c3538e.herokuapp.com/)
 Find the README [here](README.md).
 ## User Story testing
 
