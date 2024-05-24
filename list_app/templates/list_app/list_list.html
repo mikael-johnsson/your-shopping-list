@@ -45,7 +45,7 @@
         <form class="row" action="{% url 'create_list' user %}" method="POST" id="ListName">
           {% csrf_token %}
           <label class="form-label" for="new-list-name">Add a list name:</label>
-          <input id="new-list-input" class="col-12" type="text" name="new-list-name" required>
+          <input id="new-list-name" class="col-12" type="text" name="new-list-name" required>
           <button type="button" class="btn btn-secondary btn-long col-6" data-bs-dismiss="modal">Close</button>
           <button type="submit" class="btn btn-primary btn-long col-6" id="list-modal-button">Save new list</button>
         </form>
