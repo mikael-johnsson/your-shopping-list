@@ -136,8 +136,21 @@ As a not logged in user you are only allowed to create a user. Remaining handlin
 
 ### Feature showcase
 #### Navbar
-#### Sign up / Login / Logout
+The Navbar is simple. An only text logo and links to Sign Up, Login and (when logged in) Logout.
+
+![Image of the sites navbar when not logged in](static/images/documentation/navbar-signup-login.jpg)
+
+![Image of the sites navbar when logged in](static/images/documentation/navbar-logout.jpg)
+
+#### Sign Up / Login / Logout
+The Sign Up, Login and Logout pages all inherits the navbar from the rest of the site. Their own design comes mostly from the AllAuth framework.
+
+![Image of the sites sign up page](static/images/documentation/sign-up-page.jpg)
+![Image of the sites login page](static/images/documentation/login-page.jpg)
+![Image of the sites logout page](static/images/documentation/logout-page.jpg)
+
 #### List menu
+
 #### List
 #### Error pages
 ### Future features
