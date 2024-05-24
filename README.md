@@ -22,10 +22,6 @@ Picture of responsiveness
     * [Showcase](#showcase)
     * [Future Features](#future-features)
 * [Technologies and Languages used](#technologies-and-languages-used)
-    * [Languages](#Languages)
-    * [Technologies](#technologies)
-    * [Frameworks and libraries](#frameworks-and-languages)
-    * [Tools](#tools)
 * [Testing](#testing)
 * [Deployment](#deployment)
     * [Guthub](#github)
@@ -201,7 +197,7 @@ As of now, the email feature gives the receiver the name of the list, the list i
 #### A shop price scanner
 A feature that would really take the site to the next level would be the shop price scanner. The idea would be that the user inserts a list item (for example "Granny Smith apples") and the site scans the local grocery stores and suggests a store to visit depending on that stores price of the specific item. This would of course require an item library and a function to scan stores websites.
 
-## Technologies and Languages used
+## Technologies used
 - **HTML5**, used to create the structure of the site
 - **CSS**, used to add custom styling
 - **Javascript**, used to add interactivity
@@ -217,6 +213,51 @@ A feature that would really take the site to the next level would be the shop pr
 - **Github**, used for storing code in 
 - **Heroku**, used for deployment
 
+## Testing
+Testing of the site can be found [here](TESTING.md).
+
+## Deployment
+### Creating the Django App
+This is how this Django App was created:
+1. [This](https://github.com/Code-Institute-Org/gitpod-full-template) Code Institute template was used
+2. When own repository had been created, a Gitpod workspace was created
+3. Django was installed: `pip3 install django gunicorn` 
+4. Install supporting database libraries: `pip3 install dj_database_url psycopg2`
+5. Create requirements file: `pip freeze --local > requirements.txt`
+6. Create project: `django-admin startproject project_name`
+7. Create app: `python3 manage.py startapp app_name` 
+8. Add app to INSTALLED_APPS[] in project_name > settings
+9. Migrate changes: `python3 manage.py migrate`
+
+The app should now be working. Test it with command `python3 manage.py runserver`
+
+### Deploying on Heroku
+This app was deployed using Heroku.
+1. Create an account and / or login to Heroku.
+2. Click "New" and "Create new app"
+3. Choose a name and a region
+4. If not last deployment, add DISABLE_COLLECTSTATIC = 1 to config vars in settings
+5. Add your DATABASE_URL (if any) and SECRET_KEY to config vars
+6. In deployment, connect Heroku App to you Github repository
+7. Deploy through automatic or manual deployment
+
+### How to fork
+These are instructions how to fork the app from Github:
+
+1. Sign in / create an account at [Github](https://www.github.com)
+2. Go to the application's repository [*your-shopping-list*](https://github.com/mikael-johnsson/your-shopping-list)
+3. Click "Fork" > "Create a new fork"
+4. Choose an appropriate name and click "Create Fork"
+
+### How to clone
+These are instructions how to fork the app from Github:
+
+1. Sign in / create an account at [Github](https://www.github.com)
+2. Go to the application's repository [*your-shopping-list*](https://github.com/mikael-johnsson/your-shopping-list)
+3. Click "Code"
+4. Choose to clone via HTTPS, SSH-key or Github CLI
+5. Go to IDE of choice, I chose Gitpod
+6. Create workspace via chosen clone way from step 4
 
 
 
