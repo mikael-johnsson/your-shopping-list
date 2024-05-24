@@ -52,6 +52,8 @@ The colours chosen for this site are contrasting eachother and each serves their
 
 ![Image of the colour pallette used](static/images/documentation/color-pallette-YSL.jpg)
 ### Font
+The font used is *Roboto*. It is a clean, sans-serif font which fits perfect for a website with a simple design. The font is imported from Google Fonts.
+
 ## Project Planning
 This project is intended to help with the everyday life mission to go to the grocery store. With a working shopping list system you can make your shopping more efficient and be sure to come back home with the items you needed. With a sharing feature a partner, friend or family member can do the shopping the site user planned and in that way be of service in sickness and in health.
 
@@ -104,6 +106,8 @@ The site was developed mobile first. The desktop wireframes are therefor bigger 
 ![Wireframe for the list menu on desktop](static/images/documentation/Desktop_list_menu.png)
 ![Wireframe for the list on desktop](static/images/documentation/Desktop_handle_list.png)
 ![Wireframe for the share list feature on desktop](static/images/documentation/Desktop_share_list.png)
+
+### ERDs
 
 
 
