@@ -128,9 +128,23 @@ With a few 100s in the top and a few 87 as a lowest, the average value is 94.5. 
 |Email field|only entering blankspace|Error message shows||
 
 
-
 **Messages**
 
+Messages with the correct message shall appear between content and navbar after the following actions:
 
+- Login
+- Logout
+- Created list
+- Submitting a list name longer than 35 characters
+- Submitting a list name with only blankspaces
+- Updated list name
+- Deleted list
+- Updated item
+- Added item
+- Deleted item
+- Submitting item content longer than 35 characters
+- Submitting item content with only blankspaces
+
+After meticulous testing, it is clear that the correct message appear after the correlating action.
 
 ## Bugs
