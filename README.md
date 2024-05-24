@@ -178,6 +178,11 @@ If an error were to appear, the site has a 404 / 403 / 500 page ready to go. For
 
 ![Image of the sites 404 page](static/images/documentation/404-page.jpg)
 
+#### Admin page
+The site uses the Django Admin page. From there a superuser can use CRUD functionality on all of the sites objects.
+
+![Image of the sites admin page](static/images/documentation/admin-page.jpg)
+
 ### Future features
 There are a lot of features that were considered for this site that would make it a lot better. Time has, as always, been a factor in the development and it wasn't sufficient to create and implement these features.
 
@@ -196,6 +201,21 @@ As of now, the email feature gives the receiver the name of the list, the list i
 #### A shop price scanner
 A feature that would really take the site to the next level would be the shop price scanner. The idea would be that the user inserts a list item (for example "Granny Smith apples") and the site scans the local grocery stores and suggests a store to visit depending on that stores price of the specific item. This would of course require an item library and a function to scan stores websites.
 
+## Technologies and Languages used
+- **HTML5**, used to create the structure of the site
+- **CSS**, used to add custom styling
+- **Javascript**, used to add interactivity
+- **Python**, used to provide functionality
+- **Django**, framework used to create the backend shell of the site
+- **Bootstrap**, used for easy styling
+- **CI Database**, used for data storage
+- **Lucidchart**, used for creating ERDs
+- **Balsamiq**, used for creating wireframes
+- **Am I responsive?**, used for responsiveness imagery
+- **Coolors**, used for creating colour pallette
+- **Gitpod**, used for writing code in
+- **Github**, used for storing code in 
+- **Heroku**, used for deployment
 
 
 
