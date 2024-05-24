@@ -20,16 +20,26 @@ Picture of responsiveness
 * [Features](#features)
     * [CRUD functionality](#crud-functionality)
     * [Showcase](#showcase)
+        * [Navbar](#navbar)
+        * [Sign Up / Login / Logout](#sign-up--login--logout)
+        * [Home page](#home-page)
+        * [List menu](#list-menu)
+        * [List](#list)
+        * [Error pages](#error-pages)
+        * [Admin page](#admin-page)
+        * [Messages](#messages)
     * [Future Features](#future-features)
+        * [Visual examples in home page](#visual-examples-in-home-page)
+        * [Improved email feature](#improved-email-feature)
+        * [A shop price scanner](#a-shop-price-scanner)
+        * [Link to admin page](#li)
 * [Technologies and Languages used](#technologies-and-languages-used)
 * [Testing](#testing)
 * [Deployment](#deployment)
-    * [Guthub](#github)
-    * [Django](#Django)
-    * [Heroku](#heroku)
-    * [CI Database](#CI-database)
-    * [Clone](#Clone)
-    * [Fork](#fork)
+    * [Creating the Django App](#github)
+    * [Deploying on Heroku](#Django)
+    * [How to fork](#heroku)
+    * [How to clone](#CI-database)
 * [Credits](#credits)
     * [Code](#code)
     * [Acknowledgements](#acknowledgements)
@@ -265,7 +275,7 @@ These are instructions how to fork the app from Github:
 6. Create workspace via chosen clone way from step 4
 
 ## Credits
-### Credits
+### Code
 The log in/log out/sign up code is from Django AllAuth library and inplemented as it was in the Code Institute Blog Walkthrough.
 
 The notebook look is from [here](https://www.codesdope.com/blog/article/getting-notebook-paper-effect-with-css/).

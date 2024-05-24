@@ -148,3 +148,6 @@ Messages with the correct message shall appear between content and navbar after 
 After meticulous testing, it is clear that the correct message appear after the correlating action.
 
 ## Bugs
+### Fixed bugs
+- CSS did not load properly. This was fixed after a conversation with a CI tutor and the problem was that debug was set to false (which can affect the ability to read CSS).
+
