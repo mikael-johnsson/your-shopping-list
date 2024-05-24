@@ -150,6 +150,10 @@ The Sign Up, Login and Logout pages all inherits the navbar from the rest of the
 ![Image of the sites logout page](static/images/documentation/logout-page.jpg)
 
 #### List menu
+The list menu displays the user's lists with a notebook like background. The name of the appears to be on one of the lines in the notebook. At the bottom of the menu the user finds the "Create New List"-button. That opens a modal in which the user can submit a name to the list.
+
+![Image of the list menu](static/images/documentation/list-menu.jpg)
+![Image of the new list modal](static/images/documentation/new-list-modal.jpg)
 
 #### List
 #### Error pages
