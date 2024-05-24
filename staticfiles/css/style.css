@@ -6,6 +6,7 @@ html {
 body {
     background-color: rgb(236, 229, 220);
     min-height: 100%;
+    font-family: 'Roboto', sans-serif;
 }
 
 .username-heading {
@@ -123,7 +124,7 @@ nav h1 {
 
 /* Create new list modal */
 .btn-long {
-    width: 128px;
+    width: 132px;
 }
 
 #new-list-input {
@@ -274,7 +275,7 @@ nav h1 {
 }
 
 .delete-list-button {
-    width: 96px;
+    width: 98px;
     font-size: medium;
 }
 
