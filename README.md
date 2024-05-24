@@ -197,6 +197,9 @@ As of now, the email feature gives the receiver the name of the list, the list i
 #### A shop price scanner
 A feature that would really take the site to the next level would be the shop price scanner. The idea would be that the user inserts a list item (for example "Granny Smith apples") and the site scans the local grocery stores and suggests a store to visit depending on that stores price of the specific item. This would of course require an item library and a function to scan stores websites.
 
+#### Link to admin page
+To make it easier for a Superuser to navigate to the admin page, a link to the page could be added to the navbar or to a footer. For now the superuser needs to add /admin to the home page URL.
+
 ## Technologies used
 - **HTML5**, used to create the structure of the site
 - **CSS**, used to add custom styling
@@ -258,7 +261,6 @@ These are instructions how to fork the app from Github:
 4. Choose to clone via HTTPS, SSH-key or Github CLI
 5. Go to IDE of choice, I chose Gitpod
 6. Create workspace via chosen clone way from step 4
-
 
 ## Credits
 ### Credits
