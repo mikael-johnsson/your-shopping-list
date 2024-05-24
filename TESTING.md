@@ -37,7 +37,7 @@ sendMail is a function written properly, why this is caught by JSHint I do not k
 ### CI Python Linter
 Code Instittue has a easy to use Python Linter. You can find it [here](https://pep8ci.herokuapp.com/).
 
-All of the python files were run through the CI Python Linter. It came back with no errors.
+All of the python files were processed through the CI Python Linter. It came back with no errors.
 
 ### Lighthouse
 Lighthouse is a devtools tool to measure performance, accessibility, best practices and SEO of a site. It rates between 0 and 100. These are the results of this site:
@@ -112,20 +112,22 @@ With a few 100s in the top and a few 87 as a lowest, the average value is 94.5. 
 |Password|only pressing enter|Error message shows|Valid|
 |Password|entering incorrect password|Error message shows|Valid|
 |*List menu page*||||
-|Create new list modal|only pressing enter|Error message shows||
-|Create new list modal|only entering blankspace|Error message shows, stop displaying modal||
-|Create new list modal|entering name over 25 characters|Error message shows, stop displaying modal||
+|Create new list modal|only pressing enter|Error message shows|Valid|
+|Create new list modal|only entering blankspace|Error message shows, stop displaying modal|Valid|
+|Create new list modal|entering name over 25 characters|Error message shows, stop displaying modal|Valid|
 |*List page*||||
-|Edit list name|only pressing enter|Error message shows||
-|Edit list name|only entering blankspace|Error message shows||
-|Edit list name|entering name over 25 characters|Error message shows||
-|Edit item content|only pressing enter|Error message shows||
-|Edit item content|only entering blankspace|Error message shows||
-|Edit item content|entering value over 35 characters|Error message shows||
+|Edit list name|only pressing enter|Error message shows|Valid|
+|Edit list name|only entering blankspace|Error message shows|Valid|
+|Edit list name|entering name over 25 characters|Error message shows|Valid|
+|Edit item content|only pressing enter|Error message shows|Valid|
+|Edit item content|only entering blankspace|Error message shows|Valid|
+|Edit item content|entering value over 35 characters|Error message shows|Valid|
 |*Share list modal*||||
-|Name field|only pressing enter|Error message shows||
-|Email field|only pressing enter|Error message shows||
-|Email field|only entering blankspace|Error message shows||
+|Name field|only pressing enter|Error message shows|Valid|
+|Email field|only pressing enter|Error message shows|Valid|
+|Email field|only entering blankspace|Error message shows|Valid|
+
+As of now, it is possible to create a username consisting of only blankspaces. It is not ideal but a part of Djangos AllAuth library and the resources to remedy it are not sufficient.
 
 
 **Messages**

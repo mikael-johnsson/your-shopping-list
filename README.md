@@ -1,10 +1,11 @@
 # Your Shopping List
 *Your Shopping List* is the place to go if you want a quick and easy way to create a shopping list while on the go! You can: edit it, delete it or share it with a friend!
 
-This is a project created during the Code Institute flag, being the portfolio project 4. It is for learning purposes only.
+This is a project created under the Code Institute flag, being the portfolio project 4. It is for learning purposes only.
 
-Link to live site
-Picture of responsiveness
+Find the live site [here]()
+
+![Image of the responsiveness of the site](static/images/documentation/responsiveness.jpg)
 
 ## Contents
 
@@ -45,7 +46,7 @@ Picture of responsiveness
     * [Acknowledgements](#acknowledgements)
 
 ## User Experience
-This application needs to be fast to use. It is competing with your phones notes app, a piece of paper and a pen and of course just your memory.
+This application needs to be fast to use. It is competing with your phone's note's app, pen and paper and of course just your memory.
 
 The USP of this site is to have a clean look which gives the user a clear oversite and easy to use features you can not find at it's competitors.
 ### Colour Scheme
@@ -61,7 +62,7 @@ The colours chosen for this site are contrasting eachother and each serves their
 The font used is *Roboto*. It is a clean, sans-serif font which fits perfect for a website with a simple design. The font is imported from Google Fonts.
 
 ## Project Planning
-This project is intended to help with the everyday life mission to go to the grocery store. With a working shopping list system you can make your shopping more efficient and be sure to come back home with the items you needed. With a sharing feature a partner, friend or family member can do the shopping the site user planned and in that way be of service in sickness and in health.
+This project is intended to help with the everyday life mission to go to the grocery store. With a working shopping list system you can make your shopping more efficient and be sure to come back home with the items you needed. With a sharing feature; a partner, friend or family member can do the shopping the site user planned and in that way be of service in sickness and in health.
 
 **Site Goals**
 * Provide a quick way to write and handle shopping lists
@@ -70,7 +71,7 @@ This project is intended to help with the everyday life mission to go to the gro
 * Have a quick and secure way of sharing lists
 
 ### Agile Methods
-This project was planned with agile methods. As some features depended on others to be built, the obvious way was to start with the most fundamental features and user stories first and work upwards. Since one feature had the label "Could have" it was planned to be built last, after the site was fully functioning.
+This project was planned with agile methods. As some features depended on others to be built, the obvious way was to start with the most fundamental features and user stories first and work upwards.
 
 ### MoSCoW Method
 The issues created for this site were labeled with the use of the MoSCoW method. That divides the labels into:
@@ -93,7 +94,7 @@ The issues created for this site were labeled with the use of the MoSCoW method.
 |As an admin I can delete users so that inactive users don’t take up space in the database|SHOULD HAVE|
 
 ### Wireframes
-The site was developed mobile first. The desktop wireframes are therefor bigger versions of the mobile wireframes.
+The site was developed mobile first. The desktop wireframes are therefor bigger versions of the mobile wireframes. In the wireframes checkboxes are to be seen. That feature was never implemented. More information can be found at [Future features](#future-features).
 
 **Mobile**
 
@@ -122,14 +123,17 @@ Below is the Entity Relationship Diagram:
 
 
 **User**
-Django's User model is a excellent way to create and handle users at your site. Combined with the AllAuth framework, a lot of the work to create a functioning site with user is already done. 
+
+Django's User model is a excellent way to create and handle users at your site. Combined with the AllAuth framework, a lot of the work to create a functioning site with users is already done. 
 
 The default fields for the AllAuth sign up page is *username*, *email* and *password.* To differentiate between regular users and admin accounts the *Superuser* field was added to the ERD. These are not all of the Django User model fields, but those used in this site.
 
 **List**
+
 The List model is a custom model. It has a primary key of Djangos default id field, that increments automatically. That id is also what builds the detailed list views URL. The author field is a foreign key that connects with the user model. It is mostly used for authentification.
 
 **List item**
+
 The List item model is what creates what you actually see in the lists. It also has a primary key of the default id field. It also connects to the user model via the author field. The List model has a second foreign key connecting it to the List model. This is to make sure that the correct items are displayed when opening a list.
 
 ## Features
@@ -138,7 +142,7 @@ This site contains three different kind of objects: User, List and List item.
 
 As a logged in user you can handle List and List items. With simple buttons and forms you can create, read, update and delete your lists and list items.
 
-As a not logged in user you are only allowed to create a user. Remaining handling features of the user object is limited to the superusers through the admin page. As of now there is no way for a regular user to update username, change password or delete account.
+As a non logged in user you are only allowed to create a user. Remaining handling features of the user object is limited to the superusers through the admin page. As of now there is no way for a regular user to update username, change password or delete account.
 
 ### Feature showcase
 #### Navbar
@@ -163,7 +167,7 @@ A short text quickly explains to the user what the site can do and why it is use
 ![Image of the sites home page](static/images/documentation/home-page.jpg)
 
 #### List menu
-The list menu displays the user's lists with a notebook like background. The name of the appears to be on one of the lines in the notebook. At the bottom of the menu the user finds the "Create New List"-button. That opens a modal in which the user can submit a name to the list.
+The list menu displays the user's lists with a notebook like background. The name of the list appears to be on one of the lines in the notebook. At the bottom of the menu the user finds the "Create New List"-button. That opens a modal in which the user can submit a name to the list.
 
 ![Image of the list menu](static/images/documentation/list-menu.jpg)
 ![Image of the new list modal](static/images/documentation/new-list-modal.jpg)
@@ -190,6 +194,9 @@ The site uses the Django Admin page. From there a superuser can use CRUD functio
 ![Image of the sites admin page](static/images/documentation/admin-page.jpg)
 
 #### Messages
+Django Messages are used to confirm or inform to user of it's actions. The messages are always displayed between the content and the navbar. They also have a close button to hide the message.
+
+![Image of a message on the site](static/images/documentation/messages.jpg)
 
 ### Future features
 There are a lot of features that were considered for this site that would make it a lot better. Time has, as always, been a factor in the development and it wasn't sufficient to create and implement these features.
@@ -201,7 +208,7 @@ Lack of understanding how to connect the input checkbox element with the checked
 
 #### Visual examples in home page
 
-To give a new user a better picture of how the site looks and works, images or real examples of the list menu and detailed list could be displayed on the home page.
+To give a new user a better understanding of how the site looks and works, images or real examples of the list menu and detailed list could be displayed on the home page.
 
 #### Improved email feature
 As of now, the email feature gives the receiver the name of the list, the list items and a custom message. Ideally the receiver would also get the notebook look that is associated with the site, in the email. The chosen email service, EmailJS, seems to lack that feature as of now.
@@ -237,14 +244,14 @@ This is how this Django App was created:
 1. [This](https://github.com/Code-Institute-Org/gitpod-full-template) Code Institute template was used
 2. When own repository had been created, a Gitpod workspace was created
 3. Django was installed: `pip3 install django gunicorn` 
-4. Install supporting database libraries: `pip3 install dj_database_url psycopg2`
-5. Create requirements file: `pip freeze --local > requirements.txt`
-6. Create project: `django-admin startproject project_name`
-7. Create app: `python3 manage.py startapp app_name` 
-8. Add app to INSTALLED_APPS[] in project_name > settings
-9. Migrate changes: `python3 manage.py migrate`
+4. Supporting database libraries were installed: `pip3 install dj_database_url psycopg2`
+5. A requirements file were created: `pip freeze --local > requirements.txt`
+6. A project were created: `django-admin startproject project_name`
+7. An app were created: `python3 manage.py startapp app_name` 
+8. App were addded to INSTALLED_APPS[] in project_name > settings
+9. Changes were migrated: `python3 manage.py migrate`
 
-The app should now be working. Test it with command `python3 manage.py runserver`
+The app were the working. Test your app with command `python3 manage.py runserver`
 
 ### Deploying on Heroku
 This app was deployed using Heroku.
