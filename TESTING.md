@@ -149,5 +149,6 @@ After meticulous testing, it is clear that the correct message appear after the 
 
 ## Bugs
 ### Fixed bugs
-- CSS did not load properly. This was fixed after a conversation with a CI tutor and the problem was that debug was set to false (which can affect the ability to read CSS).
+- CSS did not load properly. This was fixed after a conversation with a CI tutor, the problem was that debug was set to false (which can affect the ability to read CSS).
+- Modal not showing. When implementing Bootstrap modals, they failed to show. This was fixed after a conversation with a CI tutor, the problem was that Bootstrap had changed the syntax of how to display a modal.
 
