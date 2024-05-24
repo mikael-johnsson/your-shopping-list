@@ -35,7 +35,38 @@ The bootstrap and emailjs variable are important to the functionality of the sit
 
 sendMail is a function written properly, why this is caught by JSHint I do not know. I will disregard this warning.
 ### CI Python Linter
+Code Instittue has a easy to use Python Linter. You can find it [here](https://pep8ci.herokuapp.com/).
+
 All of the python files were run through the CI Python Linter. It came back with no errors.
+
 ### Lighthouse
+Lighthouse is a devtools tool to measure performance, accessibility, best practices and SEO of a site. It rates between 0 and 100. These are the results of this site:
+
+**Mobile, home page**
+
+![Image of the Lighthouse score for mobile on the home page](static/images/documentation/LH-mobile-home.jpg)
+
+**Mobile, list menu page**
+
+![Image of the Lighthouse score for mobile on the list menu page](static/images/documentation/LH-mobile-list-menu.jpg)
+
+**Mobile, list page**
+
+![Image of the Lighthouse score for mobile on the list page](static/images/documentation/LH-mobile-list.jpg)
+
+**Desktop, home page**
+
+![Image of the Lighthouse score for desktop on the home page](static/images/documentation/LH-desktop-home.jpg)
+
+**Desktop, list menu page**
+
+![Image of the Lighthouse score for desktop on the list menu page](static/images/documentation/LH-desktop-list-menu.jpg)
+
+**Desktop, list page**
+
+![Image of the Lighthouse score for desktop on the list page](static/images/documentation/LH-desktop-list.jpg)
+
+With a few 100s in the top and a few 87 as a lowest, the average value is 94.5. I deem it acceptable with some work to be done with the accessibility of the site.
+
 ## Manual Testing
 ## Bugs
