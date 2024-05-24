@@ -156,7 +156,18 @@ The list menu displays the user's lists with a notebook like background. The nam
 ![Image of the new list modal](static/images/documentation/new-list-modal.jpg)
 
 #### List
+In the detailed list view is where the real work of the site takes place. This is where the user creates the content of the list. The page also allows the user to edit the list, delete the list and via email share the list.
+
+The *EDIT* and *EDIT LIST* buttons allows the user to edit the list name respectively the list items.
+
+To share and delete the list - modals pop up and the user can enter the information needed and/or confirm the action.
+
+![Image of the sites list page](static/images/documentation/detailed-list.jpg)
+![Image of the sites list page when edit buttons clicked](static/images/documentation/list-edits.jpg)
+![Image of the share list modal](static/images/documentation/share-list-modal.jpg)
+![Image of the delete list modal](static/images/documentation/delete-list-modal.jpg)
 #### Error pages
+
 ### Future features
 
 
