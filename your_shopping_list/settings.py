@@ -9,7 +9,6 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
-#TEST COMMENT FOR PUSH FROM NEW LOCAL IDE
 
 from pathlib import Path
 import os
@@ -29,10 +28,11 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['8000-mikaeljohns-yourshoppin-h4rr394r752.ws-eu114.gitpod.io',
-                '.herokuapp.com']
+                '.herokuapp.com',
+                '127.0.0.1']
 
 
 # Application definition
