@@ -16,6 +16,24 @@ if (deleteListButton) {
     deleteListButton.addEventListener("click", showDeleteListModal);
 }
 
+// Clear list confirmation modal
+const clearListButton = document.getElementById('clear-list-button');
+/**
+ * Function that displays the Clear List Modal when user clicks 
+ * the clear list button in list_detail.html.
+ * 
+ */
+function showClearListModal () {
+    const clearConfirmationModal = document.getElementById("clear-confirmation-modal");
+    const modal = new bootstrap.Modal(clearConfirmationModal);
+    modal.show();
+}
+
+
+if (clearListButton) {
+    clearListButton.addEventListener("click", showClearListModal);
+}
+
 // Share list modal
 const shareListButton = document.getElementById("share-list-button");
 /**

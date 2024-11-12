@@ -128,6 +128,25 @@ def list_delete(request, id):
         return render(
                request,
                "403.html")
+    
+def clear_list(request, id):
+    """
+    View that deletes all items in the list the user is displaying.
+    Redirects back to detailed list view.
+    """
+    if request.user.is_authenticated:
+        list = List.objects.get(id=id)
+        items = ListItem.objects.all().filter(list=list.id)
+
+        if request.method == "POST":
+            items.delete()
+            messages.success(request, "You have cleared the list")
+
+        return redirect('list_detail', id=id)
+    else:
+        return render(
+               request,
+               "403.html")
 
 
 def create_item(request, id):

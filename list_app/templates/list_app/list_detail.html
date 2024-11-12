@@ -65,6 +65,7 @@
   <!-- List buttons -->
   <div class="row button-row">
     <button class="btn btn-primary list-button" id="share-list-button">SHARE</button>
+    <button class="btn btn-primary list-button" id="clear-list-button">CLEAR LIST</button>
     <button class="btn btn-danger list-button" id="delete-list-button">DELETE LIST</button>
   </div>
 </div>
@@ -83,6 +84,26 @@
         <form class="delete-list-form" action="{% url 'list_delete' list.id %}" method="POST">
           {% csrf_token %}
           <button type="submit" class="btn btn-danger delete-list-button">Delete list</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Clear list confirmation modal-->
+<div class="modal fade" id="clear-confirmation-modal" tabindex="-1" aria-labelledby="clear-confirmation-modal"
+  aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="clearListLabel">Are you sure you want to clear the entire list?</h1>
+        <button type="button" class="btn-close clear-list-button" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body container-fluid">
+        <button type="button" class="btn btn-secondary clear-list-button" data-bs-dismiss="modal">Cancel</button>
+        <form class="clear-list-form" action="{% url 'clear_list' list.id %}" method="POST">
+          {% csrf_token %}
+          <button type="submit" class="btn btn-danger clear-list-button">Clear list</button>
         </form>
       </div>
     </div>
