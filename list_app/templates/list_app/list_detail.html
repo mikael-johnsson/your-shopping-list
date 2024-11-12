@@ -65,7 +65,7 @@
   <!-- List buttons -->
   <div class="row button-row">
     <button class="btn btn-primary list-button" id="share-list-button">SHARE</button>
-    <button class="btn btn-primary list-button" id="clear-list-button">CLEAR LIST</button>
+    <button class="btn btn-warning list-button" id="clear-list-button">CLEAR LIST</button>
     <button class="btn btn-danger list-button" id="delete-list-button">DELETE LIST</button>
   </div>
 </div>
@@ -101,9 +101,9 @@
       </div>
       <div class="modal-body container-fluid">
         <button type="button" class="btn btn-secondary clear-list-button" data-bs-dismiss="modal">Cancel</button>
-        <form class="clear-list-form" action="{% url 'clear_list' list.id %}" method="POST">
+        <form class="delete-list-form" action="{% url 'clear_list' list.id %}" method="POST">
           {% csrf_token %}
-          <button type="submit" class="btn btn-danger clear-list-button">Clear list</button>
+          <button type="submit" class="btn btn-warning clear-list-button">Clear list</button>
         </form>
       </div>
     </div>
